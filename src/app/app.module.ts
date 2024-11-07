@@ -8,14 +8,28 @@ import { CountertaskModule } from './countertask/countertask.module';
 import {ApiTaskRoutingModule} from './api-task/api-task-routing.module';
 import{ApiTaskComponent} from './api-task/api-task.component';
 
+import{ReactiveFormRoutingModule} from './reactive-form/reactive-form-routing.module'
+import {ReactiveFormComponent} from './reactive-form/reactive-form.component'
+import{ReactiveFormsModule} from '@angular/forms';
+import{FormsModule} from'@angular/forms'
+
+import {TemplatedrivenFormRoutingModule} from './templatedriven-form/templatedriven-form-routing.module';
+import {TemplatedrivenFormComponent} from './templatedriven-form/templatedriven-form.component'
+
 @NgModule({
-  declarations: [AppComponent,ApiTaskComponent],
+  declarations: [AppComponent,ApiTaskComponent,ReactiveFormComponent,
+    TemplatedrivenFormComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CountertaskModule,
-    ApiTaskRoutingModule
+    ApiTaskRoutingModule,
+    ReactiveFormRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TemplatedrivenFormRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

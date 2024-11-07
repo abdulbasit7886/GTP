@@ -1,0 +1,46 @@
+<div class="formmaindiv">
+  <br />
+  <div class="formdiv">
+    <h1 class="h1">Reactive Form</h1>
+    <form [formGroup]="submitForm" (ngSubmit)="submitform()">
+      <label>Username</label>
+      <br />
+      <input
+        type="text"
+        placeholder="Enter username"
+        formControlName="username"
+        class="inputfileds"
+      />
+      <br />
+      <br />
+      <label>Email</label>
+      <br />
+      <input
+        type="email"
+        placeholder="Enter Email"
+        formControlName="email"
+        class="inputfileds"
+      />
+      <br />
+      <br />
+      <label>Password</label>
+      <br />
+      <input
+        type="password"
+        placeholder="Enter Password"
+        name="password"
+        formControlName="password"
+        class="inputfileds"
+      />
+      <br />
+      <br />
+      <button class="button">Submit</button>
+    </form>
+  </div>
+  <div *ngIf="submitData" class="datadisplay">
+    <h2>Form Data</h2>
+    <p><strong>Username:</strong> {{ submitData.username }}</p>
+    <p><strong>Email:</strong> {{ submitData.email }}</p>
+    <p><strong>Password:</strong> {{ submitData.password }}</p>
+  </div>
+</div>
