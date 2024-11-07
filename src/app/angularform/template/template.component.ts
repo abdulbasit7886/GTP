@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-template',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./template.component.css']
 })
 export class TemplateComponent {
+  constructor(private router:Router){}
+  userSignUp(signUpForm: NgForm) {
+    let data=signUpForm.value
+    console.log(data)
+    signUpForm.reset()
+    alert(` ${data.name} profile created successfully`)
+  }
 
 }
