@@ -1,0 +1,37 @@
+/* Center content in the component */
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+  /* Style the count display */
+  .count-display {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  /* Style buttons */
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Add some spacing between buttons */
+  button + button {
+    margin-left: 10px;
+  }
+  
