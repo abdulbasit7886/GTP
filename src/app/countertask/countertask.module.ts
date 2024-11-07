@@ -5,7 +5,7 @@ import { CountertaskRoutingModule } from './countertask-routing.module';
 import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
-  declarations: [CounterComponent],
+  declarations: [],
   imports: [CommonModule, CountertaskRoutingModule],
 })
 export class CountertaskModule {}

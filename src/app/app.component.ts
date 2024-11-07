@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'GTP';
-  count: number = 1;
+  count: number = 0;
+
+  handleCountChange(newCount: number) {
+    this.count = newCount;
+  }
 }
