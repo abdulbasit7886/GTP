@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataviewComponent } from './dataview.component';
+import {DataviewComponent} from './dataview/dataview.component'
 
 describe('DataviewComponent', () => {
   let component: DataviewComponent;

@@ -1,12 +1,16 @@
+//ap.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { CommonModule } from '@angular/common'; 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DataviewComponent } from '../app/apidata/dataview/dataview.component'
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [AppComponent,DataviewComponent],
+  imports: [BrowserModule, 
+    AppRoutingModule,CommonModule,
+     HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

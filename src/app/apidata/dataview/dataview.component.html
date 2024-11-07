@@ -1,1 +1,13 @@
-<p>dataview works!</p>
+
+<div *ngIf="users">
+    <h2>User List</h2>
+    <ul>
+      <li *ngFor="let user of users">
+        <strong>{{ user.name }}</strong><br>
+        <span>Email: {{ user.email }}</span><br>
+        <span>Phone: {{ user.phone }}</span><br>
+        <span>Website: {{ user.website }}</span><br><br>
+      </li>
+    </ul>
+  </div>
+  
