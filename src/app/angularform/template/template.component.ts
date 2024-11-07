@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./template.component.css']
 })
 export class TemplateComponent {
+  signUpData = {
+    username: '',
+    email: '',
+    password: ''
+  };
 
+  onSubmit(): void {
+    console.log('Form Submitted', this.signUpData);
+    alert('Form Submitted')
+  }
 }

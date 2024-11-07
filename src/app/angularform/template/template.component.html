@@ -1,1 +1,23 @@
-<p>template works!</p>
+<div class="form-container">
+    <h2>Sign Up</h2>
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+      
+      <div>
+        <label for="username">Username</label>
+        <input id="username" name="username" [(ngModel)]="signUpData.username" required type="text">
+      </div>
+  
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" [(ngModel)]="signUpData.email" required type="email">
+      </div>
+  
+      <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" [(ngModel)]="signUpData.password" required type="password">
+      </div>
+
+      <button type="submit" [disabled]="form.invalid">Submit</button>
+    </form>
+  </div>
+  

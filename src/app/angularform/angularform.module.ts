@@ -4,16 +4,19 @@ import { CommonModule } from '@angular/common';
 import { AngularformRoutingModule } from './angularform-routing.module';
 import { TemplateComponent } from './template/template.component';
 import { ReactiveComponent } from './reactive/reactive.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     TemplateComponent,
-    ReactiveComponent
+    ReactiveComponent,
   ],
   imports: [
     CommonModule,
-    AngularformRoutingModule
+    AngularformRoutingModule,
+    FormsModule,ReactiveFormsModule
   ]
 })
 export class AngularformModule { }
