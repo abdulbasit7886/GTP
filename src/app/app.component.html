@@ -1,3 +1,23 @@
 <h1>{{ title }}</h1>
-<h1>{{ count }}</h1>
+
+<!-- Counter Section -->
+<div>
+  <h2>Counter: {{ count }}</h2>
+  <button (click)="increment()">Increment</button>
+  <button (click)="decrement()">Decrement</button>
+</div>
+
+<!-- User Information Section -->
+<ul>
+  <li *ngFor="let user of users">
+    <h2 class="user-name">{{ user.name }}</h2>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Website:</strong> {{ user.website }}</p>
+    <h4><strong>Address:</strong></h4>
+    <p><strong>City:</strong> {{ user.address.city }}</p>
+    <p><strong>Street:</strong> {{ user.address.street }}</p>
+  </li>
+</ul>
+
 <router-outlet></router-outlet>
