@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.h1{
+    margin-top: 10%;
+    margin-left: 15%;
+}
+.formmaindiv{
+    width: 400px;
+    height: 350px;
+    margin-top: 5%;
+    margin-left: 35%;
+    border-radius: 7px;
+    border: 1px solid gray;
+    background-color: rgb(196, 200, 199);
+}
+.formdiv{
+  
+    margin-left: 15%;
+}
+.formfields{
+    margin-top: 5%;
+}
+.inputfileds{
+    width: 270px;
+    height: 25px;
+    border-radius: 2px;
+    border: 1px solid gray;
+}
+.button{
+    width: 270px;
+    height: 20px;
+    border-radius: 7px;
+    border: none;
+    background-color: rgb(74, 223, 164);
+}

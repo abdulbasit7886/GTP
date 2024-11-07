@@ -1,0 +1,33 @@
+<p>login-form works!</p>
+<div class="formmaindiv">
+  <div class="formdiv">
+    <h1 class="h1">Login Form</h1>
+    <div class="formfields">
+      <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
+        <label>Email</label>
+        <br />
+        <input
+          type="email"
+          placeholder="Enter Email"
+          name="email"
+          ngModel
+          class="inputfileds"
+        />
+        <br />
+        <br />
+        <label>Password</label>
+        <br />
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="password"
+          ngModel
+          class="inputfileds"
+        />
+        <br />
+        <br />
+        <button class="button">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

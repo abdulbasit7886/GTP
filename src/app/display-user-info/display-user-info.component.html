@@ -1,0 +1,12 @@
+<p>display-user-info works!</p>
+<div *ngIf="userData" class="maindiv">
+  <h2 class="heading">User Infromation</h2>
+  <div class="content">
+    <p><strong>Username:</strong>{{ userData.username }}</p>
+    <p><strong>Email:</strong>{{ userData.email }}</p>
+  </div>
+</div>
+
+<div *ngIf="!userData" class="maindiv">
+  <p>No user data Found</p>
+</div>

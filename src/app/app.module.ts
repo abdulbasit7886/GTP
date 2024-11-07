@@ -14,11 +14,22 @@ import{ReactiveFormsModule} from '@angular/forms';
 import{FormsModule} from'@angular/forms'
 
 import {TemplatedrivenFormRoutingModule} from './templatedriven-form/templatedriven-form-routing.module';
-import {TemplatedrivenFormComponent} from './templatedriven-form/templatedriven-form.component'
+import {TemplatedrivenFormComponent} from './templatedriven-form/templatedriven-form.component';
+import { SignUpComponent } from './sign-up/sign-up.component'
+import {SignUpRoutingModule} from './sign-up/sign-up-routing.module';
+import { LoginFormComponent } from './login-form/login-form.component'
+import {LoginFormRoutingModule} from './login-form/login-form-routing.module';
+import { DisplayUserInfoComponent } from './display-user-info/display-user-info.component'
+import {DisplayUserInfoRoutingModule} from './display-user-info/display-user-info-routing.module'
+
+
 
 @NgModule({
   declarations: [AppComponent,ApiTaskComponent,ReactiveFormComponent,
-    TemplatedrivenFormComponent
+    TemplatedrivenFormComponent,
+    SignUpComponent,
+    LoginFormComponent,
+    DisplayUserInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +40,10 @@ import {TemplatedrivenFormComponent} from './templatedriven-form/templatedriven-
     ReactiveFormRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    TemplatedrivenFormRoutingModule
+    TemplatedrivenFormRoutingModule,
+    SignUpRoutingModule,
+    LoginFormRoutingModule,
+    DisplayUserInfoRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

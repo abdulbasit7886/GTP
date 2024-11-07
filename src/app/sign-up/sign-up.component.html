@@ -1,0 +1,44 @@
+<p>sign-up works!</p>
+<div class="formmaindiv">
+  <div class="formdiv">
+    <h1 class="h1">SignUp Form</h1>
+    <div class="formfields">
+      <form #submitForm="ngForm" (ngSubmit)="submitform(submitForm.value)">
+        <label>Username</label>
+        <br />
+        <input
+          type="text"
+          placeholder="Enter username"
+          name="username"
+          ngModel
+          class="inputfileds"
+        />
+        <br />
+        <br />
+        <label>Email</label>
+        <br />
+        <input
+          type="email"
+          placeholder="Enter Email"
+          name="email"
+          ngModel
+          class="inputfileds"
+        />
+        <br />
+        <br />
+        <label>Password</label>
+        <br />
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="password"
+          ngModel
+          class="inputfileds"
+        />
+        <br />
+        <br />
+        <button class="button">SignUp</button>
+      </form>
+    </div>
+  </div>
+</div>
