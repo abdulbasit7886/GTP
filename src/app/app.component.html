@@ -1,8 +1,4 @@
-<h1>{{title}}</h1>
-<ul>
-    <li *ngFor = "let user of users">
-        {{user.name}}
-    </li>
-</ul>
-<app-counter></app-counter>
+<h1>{{ title }}</h1>
+<p>{{ count }}</p>
+<app-counter (countChange)="UpdateCounter($event)"> </app-counter>
 <router-outlet></router-outlet>
