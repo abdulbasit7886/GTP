@@ -15,12 +15,11 @@ export class AppComponent implements OnInit {
   constructor(private counterService: CounterService, private userService: UserService) {}
 
   ngOnInit() {
-    // Subscribe to the counter value
+  
     this.counterService.currentCount.subscribe((count) => {
       this.count = count;
     });
 
-    // Fetch users from API
     this.userService.getUsers().subscribe(
       (data) => {
         this.users = data;
