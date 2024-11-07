@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { UsersService } from './service/users.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'my-app';
+  title = 'GTP';
+  count: number = 1;
 }

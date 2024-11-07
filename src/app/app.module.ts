@@ -3,19 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HttpClientModule} from '@angular/common/http';
-import { CounterComponent } from './counter/counter.component'
+import { HttpClientModule } from '@angular/common/http';
+import { CountertaskModule } from './countertask/countertask.module';
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    CounterComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CountertaskModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
