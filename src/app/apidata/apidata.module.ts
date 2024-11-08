@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ApidataRoutingModule } from './apidata-routing.module';
 import { DataviewComponent } from './dataview/dataview.component';
-
+import { ApidataRoutingModule } from './apidata-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -11,7 +10,8 @@ import { DataviewComponent } from './dataview/dataview.component';
   ],
   imports: [
     CommonModule,
-    ApidataRoutingModule
+    ApidataRoutingModule,
+    HttpClientModule
   ]
 })
 export class ApidataModule { }

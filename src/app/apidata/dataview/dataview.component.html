@@ -1,1 +1,11 @@
-<p>dataview works!</p>
+<div *ngIf="users && users.length">
+    <ul>
+      <li *ngFor="let user of users">
+        {{ user.id }} - <strong>{{ user.name }}</strong>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="!users.length">
+    <p>Loading users...</p>
+  </div>
+  
