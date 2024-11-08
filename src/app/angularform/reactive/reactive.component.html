@@ -1,1 +1,11 @@
-<p>reactive works!</p>
+<!-- app/angularform/reactive/reactive.component.html -->
+<h2>Reactive Form</h2>
+<form [formGroup]="reactiveForm" (ngSubmit)="submitData()">
+  <label>Name:</label>
+  <input formControlName="name" type="text" />
+  <br />
+  <label>Email:</label>
+  <input formControlName="email" type="email" />
+  <br />
+  <button type="submit" [disabled]="!reactiveForm.valid">Submit</button>
+</form>
