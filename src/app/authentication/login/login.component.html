@@ -1,1 +1,17 @@
-<p>login works!</p>
+<div class="container">
+    <div class="signup">
+       
+        <form #signUpForm="ngForm" (ngSubmit)="userLogin(signUpForm)">
+           
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Enter your email" name="email" ngModel required>
+            <br><br>
+            <label for="password">Password:</label>
+            <input type="password" placeholder="Enter your password" id="password" ngModel name="password" required>
+            <br><br>
+            <input type="submit" value="login">
+        </form>
+        <p>if you dont't have register then first register? <a href="/signup">Login</a></p>
+        <div id="errorMessages"></div>
+    </div>
+</div>
