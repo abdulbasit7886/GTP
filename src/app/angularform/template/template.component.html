@@ -1,1 +1,12 @@
 <p>template works!</p>
+
+<form #loginForm="ngForm" (ngSubmit)="userLogin(loginForm.value)">
+    <input type="text" placeholder="Enter email" name="email" ngModel>
+    <br><br>
+    <input type="password" placeholder="Enter password" name="password" ngModel>
+    <br>
+    <br>
+    <button>
+        login
+    </button>
+</form>

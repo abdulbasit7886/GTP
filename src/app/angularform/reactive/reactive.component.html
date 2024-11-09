@@ -1,1 +1,14 @@
 <p>reactive works!</p>
+
+
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <input type="text" placeholder="Enter email" name="email" formControlName="email">
+    <br><br>
+    <input type="password" placeholder="Enter password" name="password" formControlName="password">
+    <br><br>
+    <button>Login</button>
+</form>
+
+
+
+

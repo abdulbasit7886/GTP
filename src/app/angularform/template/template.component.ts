@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class TemplateComponent {
 
+  userLogin(item:any){
+    console.log(item)
+    alert("templete user login successfuly")
+  }
+  
 }
