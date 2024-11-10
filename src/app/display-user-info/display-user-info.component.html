@@ -1,12 +1,45 @@
-<p>display-user-info works!</p>
 <div *ngIf="userData" class="maindiv">
-  <h2 class="heading">User Infromation</h2>
+  <h2 class="heading">Dashboard</h2>
   <div class="content">
     <p><strong>Username:</strong>{{ userData.username }}</p>
     <p><strong>Email:</strong>{{ userData.email }}</p>
   </div>
-</div>
 
-<div *ngIf="!userData" class="maindiv">
-  <p>No user data Found</p>
+  <div *ngIf="!userData" class="maindiv">
+    <p>No user data Found</p>
+  </div>
+
+  <div>
+    <form #TaskForm="ngForm" (ngSubmit)="CreateTask()">
+      <input
+        type="text"
+        placeholder="Enter task name"
+        [(ngModel)]="taskname"
+        name="taskname"
+        required
+        class="task_input"
+      />
+      <br />
+      <textarea
+        placeholder="Enter description"
+        [(ngModel)]="description"
+        name="description"
+        required
+        class="textarea"
+      >
+      </textarea>
+      <button type="submit" class="task_button">
+        {{ isEdit ? "update Task" : "Add Task" }}
+      </button>
+    </form>
+
+    <ul class="task_div">
+      <li *ngFor="let task of tasks; let i = index" class="task_list">
+        <p><strong> Task Name:</strong>{{ task.name }}</p>
+        <p><strong> Task Description:</strong>{{ task.description }}</p>
+        <button (click)="updateTask(i)" class="update_butt">Update</button>
+        <button (click)="deleteTask(i)" class="delete_butt">Delete</button>
+      </li>
+    </ul>
+  </div>
 </div>
