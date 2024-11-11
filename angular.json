@@ -64,6 +64,9 @@
             },
             "development": {
               "browserTarget": "my-app:build:development"
+            },
+            "options": {
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -94,5 +97,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "0e4a1e18-8004-4657-9093-87382d84b8c5"
   }
 }

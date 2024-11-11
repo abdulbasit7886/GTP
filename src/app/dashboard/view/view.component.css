@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.btn{
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: lightblue;
+    color: black;
+    border: none;
+}
+.table{
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid grey;
+    border-radius: 5px ;
+    
+}
+tr{
+    border-bottom: 1px solid grey;
+    transition: background-color 0.5s;
+}
+th{
+    padding: 20px;
+}
+td{
+    text-align: center;
+    padding: 10px 0px;
+}
