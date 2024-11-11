@@ -6,49 +6,60 @@ import { Component } from '@angular/core';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent {
-  currentInput: string = '';
-  buttons: string[] = [
-    '7', '8', '9', '/',
-    '4', '5', '6', '*',
-    '1', '2', '3', '-',
-    '0', '.', '=', '+',
-    'C'
-  ];
+  num1: number = 0;
+  num2: number = 0;
+  operator: string = '+';
+  result: number | null = null;
+  history: string[] = [];
 
-  onButtonClick(button: string): void {
-    if (button === 'C') {
-      this.currentInput = '';
-    } else if (button === '=') {
-      this.calculateResult();
-    } else {
-      this.currentInput += button;
+  calculate() {
+    switch (this.operator) {
+      case '+':
+        this.result = this.num1 + this.num2;
+        break;
+      case '-':
+        this.result = this.num1 - this.num2;
+        break;
+      case '*':
+        this.result = this.num1 * this.num2;
+        break;
+      case '/':
+        this.result = this.num2 !== 0 ? this.num1 / this.num2 : null;
+        break;
+      case '%':
+        this.result = this.num2 !== 0 ? this.num1 % this.num2 : null;
+        break;
+      case '**':
+        this.result = Math.pow(this.num1, this.num2);
+        break;
+      case '√':
+        this.result = this.num1 >= 0 ? Math.sqrt(this.num1) : null;
+        break;
+      default:
+        this.result = null;
+    }
+    
+    if (this.result !== null) {
+      this.addToHistory();
     }
   }
 
-  calculateResult(): void {
-    try {
-      // Parse and evaluate the expression without using `eval`
-      this.currentInput = this.evaluateExpression(this.currentInput);
-    } catch (error) {
-      this.currentInput = 'Error';
-    }
+  reset() {
+    this.num1 = 0;
+    this.num2 = 0;
+    this.operator = '+';
+    this.result = null;
   }
 
-  evaluateExpression(expression: string): string {
-    const operators = /[+\-*/]/;
-    const tokens = expression.split(/([+\-*/])/).filter(token => token);
-    let result = parseFloat(tokens[0]);
+  clearHistory() {
+    this.history = [];
+  }
 
-    for (let i = 1; i < tokens.length; i += 2) {
-      const operator = tokens[i];
-      const value = parseFloat(tokens[i + 1]);
-
-      if (operator === '+') result += value;
-      if (operator === '-') result -= value;
-      if (operator === '*') result *= value;
-      if (operator === '/') result /= value;
-    }
-
-    return result.toString();
+  addToHistory() {
+    const operationString =
+      this.operator === '√'
+        ? `√${this.num1} = ${this.result}`
+        : `${this.num1} ${this.operator} ${this.num2} = ${this.result}`;
+    this.history.push(operationString);
   }
 }

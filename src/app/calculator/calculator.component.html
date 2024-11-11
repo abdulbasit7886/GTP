@@ -1,10 +1,30 @@
 <div class="calculator">
-    <input type="text" [value]="currentInput" readonly />
-  
-    <div class="buttons">
-      <button *ngFor="let button of buttons" (click)="onButtonClick(button)">
-        {{ button }}
-      </button>
-    </div>
+  <input *ngIf="operator !== '√'" type="number" [(ngModel)]="num1" placeholder="Enter  number" />
+
+  <select [(ngModel)]="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    <option value="%">%</option>
+    <option value="**">Power</option>
+    <option value="√">Square Root</option>
+  </select>
+
+  <input *ngIf="operator !== '√'" type="number" [(ngModel)]="num2" placeholder="Enter  number" />
+
+  <button (click)="calculate()">Calculate</button>
+  <button (click)="reset()">Reset</button>
+  <button (click)="clearHistory()">Clear History</button>
+
+  <div *ngIf="result !== null">
+    <h3>Result: {{ result }}</h3>
   </div>
-  
+
+  <div *ngIf="history.length > 0">
+    <h4>Calculation History:</h4>
+    <ul>
+      <li *ngFor="let entry of history">{{ entry }}</li>
+    </ul>
+  </div>
+</div>

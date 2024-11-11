@@ -1,28 +1,78 @@
 .calculator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 200px;
-    margin: 0 auto;
-  }
-  
-  input[type="text"] {
-    width: 100%;
-    height: 40px;
-    text-align: right;
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
-  }
-  
-  button {
-    width: 100%;
-    height: 40px;
-    font-size: 18px;
-  }
-  
+  width: 350px;
+  padding: 20px;
+  margin: 50px auto;
+  background: #f3f4f6;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.calculator input[type="number"],
+.calculator select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.calculator button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  background: #4a90e2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.calculator button:hover {
+  background: #357ab8;
+}
+
+.calculator h3 {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #333;
+}
+
+.calculator h4 {
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+}
+
+.calculator ul {
+  list-style: none;
+  padding: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.calculator li {
+  padding: 8px;
+  margin-bottom: 5px;
+  background: #e9ecef;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+.calculator li:nth-child(odd) {
+  background: #dee2e6;
+}
+
+.calculator input[type="number"]:focus,
+.calculator select:focus {
+  outline: none;
+  border: 1px solid #4a90e2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+}
