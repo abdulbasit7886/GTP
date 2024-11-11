@@ -19,7 +19,7 @@ export class LoginComponent {
   
         if (user.email === parsedData.email && user.password === parsedData.password) {
           alert("Login successful!");
-          this.router.navigate(['/signup']);
+          this.router.navigate(['/dashboard']);
         } else {
           alert("Invalid email or password");
         }
