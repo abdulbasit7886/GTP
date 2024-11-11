@@ -4,16 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
-import { CounterComponent } from './counter/counter.component'
+import {  } from "./form/reactive/reactive/reactive.component";
+import { FormModule } from './form/form.module';
 @NgModule({
   declarations: [
-    AppComponent,
-    CounterComponent,
+    AppComponent
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormModule
   ],
   providers: [],
   bootstrap: [AppComponent]
