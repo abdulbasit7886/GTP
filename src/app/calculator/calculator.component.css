@@ -1,0 +1,31 @@
+.calculator{
+    width: 500px;
+    margin: 0 auto;
+}
+input{
+    width: 95%;
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+select{
+    margin: 10px 0;
+    width: 100%;
+    padding: 8px;
+    border-radius: 10px;
+}
+button{
+    margin: 10px 0;
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+h3{
+    color: #333333;
+}
