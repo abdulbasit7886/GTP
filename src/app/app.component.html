@@ -1,7 +1,9 @@
 <h1>{{title}}</h1>
 <ul>
     <li *ngFor = "let user of users">
-        {{user.username}}
+        <p>UserName : {{user.username}},  &nbsp;&nbsp;Email : {{user.email}},
+            &nbsp;&nbsp; password : {{user.password}}, &nbsp;&nbsp; Phone : {{user.phone}}
+           </p>
     </li>
 </ul>
 <app-counter></app-counter>
