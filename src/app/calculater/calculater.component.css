@@ -1,0 +1,27 @@
+.main{
+    width: 315px;
+    margin: auto;
+    height: 220px;
+    border-radius: 4px;
+    border: 1px solid gray;
+    background-color: rgb(205, 202, 202);
+}
+.displayfield{
+    width: 292px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 8px;
+    margin-bottom: 5px;
+}
+
+.butt{
+    width: 94px;
+    margin-bottom: 5px;
+    margin-left: 8px;
+
+}
+.buttcal{
+    width: 298px;
+    margin-left: 8px;
+}

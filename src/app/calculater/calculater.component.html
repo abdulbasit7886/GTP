@@ -1,0 +1,23 @@
+<div class="main">
+  <input type="text" [(ngModel)]="display" readonly class="displayfield" />
+  <div class="calbutt">
+    <button (click)="append('1')" class="butt">1</button>
+    <button (click)="append('2')" class="butt">2</button>
+    <button (click)="clear()" class="butt">clear</button>
+    <button (click)="append('3')" class="butt">3</button>
+    <button (click)="append('4')" class="butt">4</button>
+    <button (click)="operation('+')" class="butt">+</button>
+    <button (click)="append('5')" class="butt">5</button>
+    <button (click)="append('6')" class="butt">6</button>
+    <button (click)="operation('-')" class="butt">-</button>
+    <button (click)="append('7')" class="butt">7</button>
+
+    <button (click)="append('8')" class="butt">8</button>
+    <button (click)="operation('*')" class="butt">*</button>
+    <button (click)="append('9')" class="butt">9</button>
+
+    <button (click)="append('0')" class="butt">0</button>
+    <button (click)="operation('/')" class="butt">/</button>
+    <button (click)="calculate()" class="buttcal">=</button>
+  </div>
+</div>
