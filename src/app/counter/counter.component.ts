@@ -7,11 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent {
-  count:any= 0;
+  count: number = 0;
   increment(){
     this.count ++;
   }
   decrement(){
-    this.count --;
+    if(this.count>0){
+      this.count --;
+
+    }
   }
 }
