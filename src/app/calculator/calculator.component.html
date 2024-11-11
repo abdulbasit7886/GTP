@@ -1,0 +1,16 @@
+<div class="calculator">
+    <input [(ngModel)]="display" class="display" readonly />
+    
+    <div class="buttons">
+      <button *ngFor="let num of numbers" (click)="appendNumber(num)">
+        {{ num }}
+      </button>
+      <button *ngFor="let op of operators" (click)="appendOperator(op)">
+        {{ op }}
+      </button>
+      <button (click)="clear()">C</button>
+      <button (click)="calculate()">=</button>
+    </div>
+  </div>
+
+  
