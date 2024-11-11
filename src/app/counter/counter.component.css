@@ -1,0 +1,18 @@
+p{
+    margin-left: 140px;
+    font-weight: bold;
+}
+
+button{
+    margin-left: 30px;
+    border: none;
+    background-color: green;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100px;
+    color: aliceblue;
+
+}
+button:hover{
+    background-color: rgb(6, 68, 6);
+}
