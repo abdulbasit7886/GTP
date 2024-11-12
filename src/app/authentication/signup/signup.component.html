@@ -1,0 +1,23 @@
+
+
+<p>login works!</p>
+<div class="container">
+    <div class="signup">
+        <h1>Welcome to <br> Websit Social App </h1>
+        <form #signUpForm="ngForm" (ngSubmit)="userSignUp(signUpForm)">
+
+            <label for="name">Name :</label>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name" ngModel required>
+            <br><br>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your email" ngModel required>
+            <br><br>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Your Password" ngModel required>
+            <br><br>
+            <input type="submit" value="SignUp">
+        </form>
+        <p>Already have an account? <a href="/login">Login</a></p>
+        <div id="errormessages"></div>
+    </div>
+</div>

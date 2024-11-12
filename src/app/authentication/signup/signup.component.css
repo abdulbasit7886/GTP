@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container{
+    height: 100%;
+    padding: 5% 0;
+
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    border-radius: 10px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid gray;
+    
+    color: white;
+}
+
+h1{
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: greenyellow;
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+input[type="submit"]{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    color: black;
+}
+a{
+    text-decoration: none;
+    color: greenyellow;
+}
