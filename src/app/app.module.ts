@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { ViewComponent } from './dashboard/view/view.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 @NgModule({
-  declarations: [AppComponent, ViewComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule,AuthenticationModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule,AuthenticationModule,DashboardModule],
   providers: [],
   bootstrap: [AppComponent],
 })

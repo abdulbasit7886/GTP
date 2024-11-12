@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 })
 export class ViewComponent {
   constructor(private router: Router) { }
-  tasks: any[] = []
+  posts: any[] = []
   ngOnInit(): void {
     this.checkToken();
-    this.taskList();
+    this.getAllPosts();
   }
 
   async checkToken() {
@@ -21,116 +21,28 @@ export class ViewComponent {
     }
   }
 
-
-  createTask() {
-    let tableRow = document.getElementById('table-row');
-    // Create <td> elements
-    let taskInputCell = document.createElement('td');
-    let taskInput = document.createElement('input');
-    taskInput.name = 'taskName'
-    taskInputCell.appendChild(taskInput);
-
-    let descriptionInputCell = document.createElement('td');
-    let descriptionInput = document.createElement('input');
-    descriptionInput.name = 'taskDescription'
-    descriptionInputCell.appendChild(descriptionInput);
-
-    let buttonCell = document.createElement('td');
-    let button = document.createElement('button');
-    button.textContent = 'Create';
-    button.addEventListener('click', () => this.add(taskInput.value, descriptionInput.value))
-    buttonCell.appendChild(button);
-
-    // Append all <td> elements to the row
-    tableRow?.appendChild(taskInputCell);
-    tableRow?.appendChild(descriptionInputCell);
-    tableRow?.appendChild(buttonCell);
-  }
-
-  async add(taskName: string, taskDescription: string) {
-    const data = {
-      taskName: taskName,
-      taskDescription: taskDescription
-    };
-
+  async getAllPosts() {
+    let token = localStorage.getItem('token');
     try {
-      // Send data to backend
-      const response = await fetch('http://localhost:3000/createTodo', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'token': localStorage.getItem('token') || ''
-        },
-        body: JSON.stringify(data)
-      });
-
-      // Check for successful response
-      if (!response.ok) {
-        throw new Error('Error in saving task');
-      }
-
-      const result = await response.json();
-      console.log('Task created successfully:', result);
-      alert('Task created successfully');
-      window.location.reload();
-    } catch (error) {
-      console.error('An error occurred:', error);
-      alert('Failed to create task');
-    }
-  }
-
-  async taskList() {
-    let token = await localStorage.getItem('token')
-    console.log(token, '********')
-    try {
-      const response = await fetch('http://localhost:3000/taskList', {
+      const response = await fetch('http://localhost:3000/post/list', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
           'token': token || ''
-        },
-      })
+        }
+      });
       if (!response.ok) {
-        const res = await response.json()
-        console.log('res')
-        throw new Error(res.message)
-      } else {
-        const data = await response.json()
-        console.log(data, 'dtata')
-        this.tasks = data
+        throw new Error(response.statusText);
       }
-    }
-    catch (error) {
+      this.posts = await response.json();
+    } catch (error) {
       console.error('An error occurred:', error);
-      alert(error)
-      return
     }
   }
-
-  async deleteTask(taskId: string) {
-    console.log(taskId)
-    let token = await localStorage.getItem('token')
-    console.log(token, '********')
-    try {
-      const response = await fetch(`http://localhost:3000/deleteTask/${taskId}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-          'token': token || ''
-        },
-      })
-      if (!response.ok) {
-        const res = await response.json()
-        throw new Error(res.message)
-      } else {
-        this.taskList()
-        alert('Task deleted Successfully')
-      }
-    }
-    catch (error) {
-      console.error('An error occurred:', error);
-      alert(error)
-      return
-    }
+  createPage() {
+    this.router.navigate([`/create-post`]);
+  }
+  editPage(postId: string) {
+    this.router.navigate([`/edit-post`], { queryParams: { postId: postId } });
   }
 }
