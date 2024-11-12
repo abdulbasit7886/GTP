@@ -1,8 +1,10 @@
-<h2>User Data</h2>
-<div *ngIf="user">
-  <p><strong>Name:</strong> {{ user.name }}</p>
-  <p><strong>Email:</strong> {{ user.email }}</p>
-</div>
-<div *ngIf="!user">
-  <p>No user data available. Please sign up first.</p>
+<div class="view">
+  <h2>Welcome to the Dashboard</h2>
+  <button [routerLink]="['/createpost']" class="create-post-button">Create Post</button>
+
+  <div *ngFor="let post of posts">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content }}</p>
+    <button [routerLink]="['/edit-post', post.id]" class="edit-post-button">Edit Post</button>
+  </div>
 </div>
