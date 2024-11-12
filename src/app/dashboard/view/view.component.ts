@@ -1,19 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { TaskService } from '../../services/task.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
   styleUrls: ['./view.component.css']
 })
-export class ViewComponent implements OnInit {
-  user: any;
+export class ViewComponent {
+  title: string = '';
+  description: string = '';
 
-  ngOnInit() {
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      this.user = JSON.parse(storedUser);
+  constructor(private taskService: TaskService, private router: Router) {}
+
+  addTask() {
+    if (this.title.trim() && this.description.trim()) {
+      const taskData = { title: this.title, description: this.description };
+
+      this.taskService.createTask(taskData).subscribe({
+        next: (response) => {
+          console.log('Task created successfully:', response); 
+          alert('Task created successfully');
+          this.title = '';
+          this.description = '';
+          this.router.navigate(['/tasks']);
+        },
+        error: (err) => {
+         
+          const errorMessage = err.error?.message || err.message || 'An error occurred while creating the task';
+          alert(`Error creating task: ${errorMessage}`);
+        }
+      });
     } else {
-      this.user = null; // Set to null if no user data is found
+      alert('Please enter both title and description');
     }
   }
 }

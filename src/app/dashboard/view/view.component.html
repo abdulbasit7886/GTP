@@ -1,9 +1,15 @@
+<!-- view.component.html -->
 <p>view works!</p>
-<h2>User Data</h2>
-<div *ngIf="user">
-  <p><strong>Name:</strong> {{ user.name }}</p>
-  <p><strong>Email:</strong> {{ user.email }}</p>
-</div>
-<div *ngIf="!user">
-  <p>No user data available. Please sign up first.</p>
-</div>
+<h2>Todo App</h2>
+
+<input type="text" [(ngModel)]="title" placeholder="Enter Task Title" />
+<br>
+<br>
+<input type="text" [(ngModel)]="description" placeholder="Enter Task Description" />
+<br>
+<br>
+<button (click)="addTask()">Add Task</button>
+
+
+
+

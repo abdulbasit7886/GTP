@@ -1,33 +1,33 @@
+// src/app/authentication/login/login.component.ts
 import { Component } from '@angular/core';
+import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private router: Router){}
-  userLogin(loginData: any){
-   
-  let user = loginData.value
- 
- 
-  const storedData = localStorage.getItem('user');
-  console.log(storedData)
+  loginData = { email: '', password: '' };
 
-  if(storedData){
-    const parseData = JSON.parse(storedData)
+  constructor(private authService: AuthService, private router: Router ) { }
 
-    if(user.email === parseData.email && user.password === parseData.password){
-      alert("login")
-      this.router.navigate(['/dashboard'])
-    }else{
-      alert("invalid email or password")
-    }
-     
-  }
-  
-    
+  login() {
+    this.authService.login(this.loginData).subscribe({
+      next: (response) => {
+        alert('Login successful!');
+        console.log(response);
+
+        // Save token in localStorage
+        if (response.token) {
+          this.authService.saveToken(response.token);
+        }
+        this.router.navigate(['/dashboard']);
+      },
+      error: (error) => {
+        alert('Login failed. Please check your credentials.');
+        console.error(error);
+      }
+    });
   }
 }
