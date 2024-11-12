@@ -20,7 +20,9 @@ import {SignUpRoutingModule} from './sign-up/sign-up-routing.module';
 import { LoginFormComponent } from './login-form/login-form.component'
 import {LoginFormRoutingModule} from './login-form/login-form-routing.module';
 import { DisplayUserInfoComponent } from './display-user-info/display-user-info.component'
-import {DisplayUserInfoRoutingModule} from './display-user-info/display-user-info-routing.module'
+import {DisplayUserInfoRoutingModule} from './display-user-info/display-user-info-routing.module';
+import { UserPostsComponent } from './user-posts/user-posts.component'
+import {UserPostsRoutingModule} from './user-posts/user-posts-routing.module'
 
 
 
@@ -29,7 +31,8 @@ import {DisplayUserInfoRoutingModule} from './display-user-info/display-user-inf
     TemplatedrivenFormComponent,
     SignUpComponent,
     LoginFormComponent,
-    DisplayUserInfoComponent
+    DisplayUserInfoComponent,
+    UserPostsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import {DisplayUserInfoRoutingModule} from './display-user-info/display-user-inf
     TemplatedrivenFormRoutingModule,
     SignUpRoutingModule,
     LoginFormRoutingModule,
-    DisplayUserInfoRoutingModule
+    DisplayUserInfoRoutingModule,
+    UserPostsRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

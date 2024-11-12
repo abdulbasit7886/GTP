@@ -6,10 +6,13 @@ import {DisplayUserInfoComponent} from './display-user-info/display-user-info.co
 import {signupGuard} from './signup.guard';
 import {loginGuard} from './login.guard';
 import {displayInfoGuard} from './display-info.guard'
+import{UserPostsComponent} from './user-posts/user-posts.component';
+import {userpostGuard} from './userpost.guard'
 const routes: Routes = [
   {path: 'signup', component: SignUpComponent, canActivate: [signupGuard]},
   {path: 'login', component: LoginFormComponent, canActivate: [loginGuard]},
-  {path: 'info', component: DisplayUserInfoComponent, canActivate: [displayInfoGuard]},
+  {path: 'post', component: UserPostsComponent, canActivate: [userpostGuard]},
+  // {path: 'info', component: DisplayUserInfoComponent, canActivate: [displayInfoGuard]},
   {path: '**', redirectTo: '/login'}
 ];
 

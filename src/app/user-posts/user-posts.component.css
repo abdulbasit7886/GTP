@@ -1,0 +1,74 @@
+.maindiv{
+    width: 60%;
+    height: auto;
+    margin-top: 1%;
+    margin-left: 20%;
+   
+}
+.heading{
+    margin-left: 25%;
+}
+.post_input{
+    margin-top: 5%;
+    margin-left: 8%;
+    width:82%;
+    border-radius: 4px;
+    height: 25px;
+    border: 1px solid gray;
+}
+.textarea{
+    margin-top: 2%;
+    margin-left: 8%;
+    border-radius: 4px;
+    width: 82%;
+    height: 80px;
+    border: 1px solid gray;
+}
+.add_post_but{
+    margin-left: 8%;
+    width: 82%;
+    height: 25px;
+    margin-top: 2%;
+    color: white;
+    background-color: rgb(74, 223, 164);
+    border-radius: 4px;
+    border: 1px solid rgb(74, 223, 164);
+}
+.post_div{
+    border: 1px solid gray;
+    width: 82%;
+    margin-top: 2%;
+    margin-left: 8%;
+    border-radius: 2px;
+}
+.username{
+font-size: 18px;
+padding: 10px;
+}
+.user_posts{
+ 
+    border: 1px solid gray;
+    background-color: white;
+    max-width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    /* margin-left: 8%; */
+    border-radius: 4px;
+}
+.update_butt{
+  width: 100px;
+  margin-bottom: 1%;
+  border-radius: 4px;
+  color: white;
+  background-color: rgb(74, 223, 164);
+  border: 1px solid rgb(74, 223, 164);
+}
+.delete_butt{
+   width: 100px;
+   margin-left: 1%;
+   margin-bottom: 1%;
+   border-radius: 4px;
+   color: white;
+  background-color: rgb(74, 223, 164);
+  border: 1px solid rgb(74, 223, 164);
+}
