@@ -14,10 +14,11 @@ interface Post{
 export class UserPostsComponent implements OnInit {
   userData: any;
   posts: Post[] = [];
- title: string = '';
- description: string = '';
- isEdit: boolean =false;
- editIndex: number | null = null;
+  title: string = '';
+  description: string = '';
+  isEdit: boolean =false;
+  editIndex: number | null = null;
+  
   ngOnInit(){
     const getuserData = localStorage.getItem('userdata');
   if(getuserData){

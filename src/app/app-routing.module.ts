@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'login', component: LoginFormComponent, canActivate: [loginGuard]},
   {path: 'post', component: UserPostsComponent, canActivate: [userpostGuard]},
   // {path: 'info', component: DisplayUserInfoComponent, canActivate: [displayInfoGuard]},
-  {path: '**', redirectTo: '/login'}
+  {path: '**', redirectTo: '/signup'}
 ];
 
 @NgModule({

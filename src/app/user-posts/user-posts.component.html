@@ -25,7 +25,6 @@
     </form>
 
     <div>
-      <!-- <div> -->
       <div *ngFor="let post of posts; let i = index" class="post_div">
         <strong class="username">{{ userData.username }}</strong>
         <div class="user_posts">
@@ -34,7 +33,6 @@
           <button (click)="EditPost(i)" class="update_butt">Edit</button>
           <button (click)="deletePost(i)" class="delete_butt">Delete</button>
         </div>
-        <!-- </div> -->
       </div>
     </div>
   </div>
