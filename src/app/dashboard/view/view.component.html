@@ -1,8 +1,17 @@
-<h2>User Data</h2>
-<div *ngIf="user">
-  <p><strong>Name:</strong> {{ user.name }}</p>
-  <p><strong>Email:</strong> {{ user.email }}</p>
+<div *ngIf="message" class="alert alert-danger">
+  {{ message }}
 </div>
-<div *ngIf="!user">
-  <p>No user data available. Please sign up first.</p>
+
+<div *ngIf="tasks.length > 0; else noTasks">
+  <ul>
+    <li *ngFor="let task of tasks">
+      <h3>{{ task.title }}</h3>
+      <p>{{ task.description }}</p>
+      <p><strong>Assigned To:</strong> {{ task.userId }}</p> 
+    </li>
+  </ul>
 </div>
+
+<ng-template #noTasks>
+  <p>No tasks found.</p>
+</ng-template>

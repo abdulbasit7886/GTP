@@ -11,16 +11,31 @@ import { NgForm } from '@angular/forms';
   imports:[FormsModule]
 })
 export class SignupComponent {
-  constructor(private router: Router) {} 
- 
-  userSignUp(signUpForm: NgForm) {
-    if (signUpForm.valid) {
-      localStorage.setItem("user", JSON.stringify(signUpForm.value));
-      alert("User registered successfully");
+  constructor(private router: Router) {}
 
-      this.router.navigate(['/login']);
+  async userSignUp(signUpForm: NgForm) {
+    if (signUpForm.valid) {
+      try {
+        const response = await fetch('http://localhost:5000/user/create', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(signUpForm.value)
+        });
+
+        if (response.ok) {
+          alert("User registered successfully");
+          this.router.navigate(['/login']);
+        } else {
+          alert("Registration failed. Please try again.");
+        }
+      } catch (error) {
+        alert("An error occurred while trying to register. Please try again.");
+        console.error("Error:", error);
+      }
     } else {
       alert("Please fill in all required fields.");
     }
-}
+  }
 }
