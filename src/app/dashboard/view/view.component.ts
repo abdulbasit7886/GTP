@@ -17,9 +17,20 @@ export class ViewComponent implements OnInit {
   }
 
   fetchPosts(): void {
-    this.http.get<any>('http://localhost:3001/posts').subscribe(
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+      console.error("No authentication token found. Please log in.");
+      return;
+    }
+
+    this.http.get<any>('http://localhost:3001/profile', {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    }).subscribe(
       (data) => {
-        this.posts = data.posts; 
+        console.log(data, 'ghghh');
+        this.posts = data.activeUserPosts; 
         console.log("Fetched posts:", this.posts);
       },
       (error) => {
@@ -28,3 +39,4 @@ export class ViewComponent implements OnInit {
     );
   }
 }
+

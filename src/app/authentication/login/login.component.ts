@@ -1,3 +1,4 @@
+import { Token } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -27,6 +28,7 @@ export class LoginComponent {
           const data = await response.json();
           if (data.token) {
             localStorage.setItem('authToken', data.token);
+            console.log(data.token)
             alert("Login successful!");
             this.router.navigate(['/dashboard']); 
           } else {
