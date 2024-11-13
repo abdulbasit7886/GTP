@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 // import { DashboardRoutingModule } from "./dashbord-routing.module";
 
 import { DashboardRoutingModule } from './dashbord-routing.module';
+import { CreatepostComponent } from './createpost/createpost.component';
+import { EditpostComponent } from './editpost/editpost.component';
 
 
 
@@ -11,6 +13,9 @@ import { DashboardRoutingModule } from './dashbord-routing.module';
 @NgModule({
   declarations: [
     
+  
+    CreatepostComponent,
+            EditpostComponent
   ],
   imports: [
     CommonModule,

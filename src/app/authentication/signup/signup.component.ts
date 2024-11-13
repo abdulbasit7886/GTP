@@ -10,12 +10,34 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent {
   constructor(private router:Router){}
-  userSignUp(signUpForm: NgForm){
-    let data = signUpForm.value
-    localStorage.setItem('user', JSON.stringify(data))
-    console.log(data);
-    signUpForm.reset()
-    this.router.navigate(['/login'])
+
+  async userSignUp(signUpForm: NgForm){
+  if(signUpForm.valid){
+try{
+  const response = await fetch ('http://localhost:3001/signup',{
+    method: 'POST',
+    headers: {
+      'Content-Type' : 'application/json'
+    },
+    body : JSON.stringify(signUpForm.value)
+    });
+    if(response.ok){
+      alert("User registered successfully");
+      this.router.navigate(['/login']);
+    }
+    else{
+      alert("Registration failed. please try again.")
+    }
+}
+catch(error){
+  alert("An error occurred while trying to register. Please try again");
+  console.error("Error:", error)
+}
+
+  }
+    else{
+      alert("Please fill in all required fields.")
+    }
     
   }
 
