@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,13 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./view.component.css']
 })
 export class ViewComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
   posts: any[] = []
   ngOnInit(): void {
     this.checkToken();
     this.getAllPosts();
   }
-
   async checkToken() {
     const token = localStorage.getItem('token')
     if (!token) {
@@ -44,5 +44,28 @@ export class ViewComponent {
   }
   editPage(postId: string) {
     this.router.navigate([`/edit-post`], { queryParams: { postId: postId } });
+  }
+
+  deletePost(postId: string) {
+    console.log(postId)
+    try {
+      this.http.delete<any>(`http://localhost:3000/post/delete-post/${postId}`, {
+        headers: {
+          'Content-Type': 'application/json',
+          'token': localStorage.getItem('token') || ''
+        }
+      }).subscribe((response) => {
+        let data = response
+        console.log(data.message)
+        this.getAllPosts()
+      },
+        (error => {
+          console.log(error)
+
+        })
+      )
+    } catch (error) {
+      console.log(error)
+    }
   }
 }

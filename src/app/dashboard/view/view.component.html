@@ -1,15 +1,18 @@
 <div class="container">
     <div class="header">
-        <p>Timeline</p>
-        <p>Profile</p>
+        <!-- <p>Timeline</p> -->
+        <p>User Posts</p>
         <!-- <p>Notification</p> -->
     </div>
     <div class="main">
         <button class="create-btn" (click)="createPage()">Create Post</button>
-        <div class="post" *ngFor="let post of posts">
+        <div class="post" *ngFor="let post of posts;" >
+            <div class="post-header">
+                <button class="del-btn" (click)="deletePost(post._id)">Delete Post</button>
+            </div>
             <h2>{{post.title}}</h2>
             <p style="margin-top: 10px;">
-           {{post.content}}
+                {{post.content}}
             </p>
             <div class="btns">
                 <button class="btn">Like</button>
