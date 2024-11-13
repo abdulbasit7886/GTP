@@ -3,17 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HttpClientModule} from '@angular/common/http';
-import { CounterComponent } from './counter/counter.component'
+import { AuthModule } from './auth/auth.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    AuthModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

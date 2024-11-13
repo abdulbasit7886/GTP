@@ -1,0 +1,12 @@
+<div class="main">
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <form id="signupForm" (ngSubmit)="save()">
+            <input type="text" id="signupName" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" placeholder="Full Name" required>
+            <input type="email" id="signupEmail" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" placeholder="Email" required>
+            <input type="password" id="signupPassword" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" placeholder="Password" minlength="6" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p class="small-text">Already have an account? <a routerLink="/" class="link">Login</a></p>
+    </div>
+</div>

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CounterComponent } from './counter.component';
+import { TodolistComponent } from './todolist.component';
 
-describe('CounterComponent', () => {
-  let component: CounterComponent;
-  let fixture: ComponentFixture<CounterComponent>;
+describe('TodolistComponent', () => {
+  let component: TodolistComponent;
+  let fixture: ComponentFixture<TodolistComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CounterComponent]
+      declarations: [TodolistComponent]
     });
-    fixture = TestBed.createComponent(CounterComponent);
+    fixture = TestBed.createComponent(TodolistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
