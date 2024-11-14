@@ -1,35 +1,86 @@
+/* General container styling */
 .create-post {
-    width: 300px;
-    margin: 0 auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Title of the form */
+.create-post h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Label styling */
+label {
+  font-size: 14px;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Input and textarea field styling */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Input focus effects */
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Button styling */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+/* Error message styling */
+.error-message {
+  margin-top: 20px;
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .create-post {
+      padding: 20px;
+      width: 90%;
   }
-  
-  .create-post label {
-    display: block;
-    margin: 10px 0 5px;
+
+  button[type="submit"] {
+      font-size: 14px;
   }
-  
-  .create-post input,
-  .create-post textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-  }
-  
-  .create-post button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .create-post button:disabled {
-    background-color: #ccc;
-  }
-  
-  .error-message {
-    color: red;
-    margin-top: 10px;
-  }
-  
+}

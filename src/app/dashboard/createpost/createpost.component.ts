@@ -18,8 +18,7 @@ export class CreatepostComponent {
     const token = localStorage.getItem('authToken');
     console.log(token)
     if (!token) {
-      this.errorMessage = 'No token found. Please log in.';
-      return;
+      this.router.navigate(['/login'])
     }
   
     const postData = {

@@ -29,7 +29,6 @@ export class LoginComponent {
           if (data.token) {
             localStorage.setItem('authToken', data.token);
             console.log(data.token)
-            alert("Login successful!");
             this.router.navigate(['/dashboard']); 
           } else {
             alert("Login failed. Token not received.");

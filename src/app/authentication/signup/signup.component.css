@@ -1,0 +1,101 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f1f1f1;
+    font-family: 'Arial', sans-serif;
+}
+.Signup {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.Signup h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Label and input field styling */
+label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.Signup input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Input focus effects */
+.Signup input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Submit button styling */
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Signup message below the form */
+p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+p a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Error message section */
+#errorMessages {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Responsive styling */
+@media (max-width: 480px) {
+    .login {
+        padding: 20px;
+        width: 90%;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+    }
+}

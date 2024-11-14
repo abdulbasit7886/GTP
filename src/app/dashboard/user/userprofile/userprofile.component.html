@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>User Information</h2>
+    <!-- user-profile.component.html -->
+    <form [formGroup]="userForm" (ngSubmit)="onUpdateUser()">
+        <label for="name">Name:</label>
+        <input id="name" formControlName="name" type="text" />
+
+        <label for="email">Email:</label>
+        <input id="email" formControlName="email" type="email" />
+
+        <label for="password">Password:</label>
+        <input id="password" formControlName="password" type="password" />
+
+        <button type="submit">Update User</button>
+    </form>
+
+</div>

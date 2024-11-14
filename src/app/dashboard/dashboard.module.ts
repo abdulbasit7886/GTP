@@ -1,25 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { RouterModule } from '@angular/router';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { ViewComponent } from './view/view.component';
 import { CreatepostComponent } from './createpost/createpost.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditpostComponent } from './editpost/editpost.component';
-import { FormsModule } from '@angular/forms';
-
+import { UserRoutingModule } from './user/user-routing.module';
 
 
 @NgModule({
   declarations: [
-    ViewComponent,
     CreatepostComponent,
-    EditpostComponent
- 
+    EditpostComponent,
+    ViewComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    FormsModule
+    FormsModule,RouterModule,ReactiveFormsModule,UserRoutingModule
   ]
 })
 export class DashboardModule { }

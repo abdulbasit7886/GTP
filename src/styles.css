@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/images/10784051.jpg');
+    background-size: cover;
+    background-position: bottom;
+    height: 100vh;
+    margin: 0;
+}

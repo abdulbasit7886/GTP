@@ -1,0 +1,15 @@
+<div class="editpost">
+  <h2>Edit Post</h2>
+<div *ngIf="post">
+    <form (ngSubmit)="savePost()">
+      <label for="title">Title:</label>
+      <input id="title" [(ngModel)]="post.title" name="title" required />
+  
+      <label for="content">Content:</label>
+      <textarea id="content" [(ngModel)]="post.content" name="content" required></textarea>
+  
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
+  
