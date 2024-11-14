@@ -1,5 +1,6 @@
+// src/app/view/view.component.ts
 import { Component } from '@angular/core';
-import { TaskService } from '../../services/task.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,29 +11,35 @@ import { Router } from '@angular/router';
 export class ViewComponent {
   title: string = '';
   description: string = '';
+  message: string = '';
 
-  constructor(private taskService: TaskService, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
-  addTask() {
-    if (this.title.trim() && this.description.trim()) {
-      const taskData = { title: this.title, description: this.description };
+  createPost(): void {
+    const token = localStorage.getItem('token');
 
-      this.taskService.createTask(taskData).subscribe({
-        next: (response) => {
-          console.log('Task created successfully:', response); 
-          alert('Task created successfully');
-          this.title = '';
-          this.description = '';
-          this.router.navigate(['/tasks']);
-        },
-        error: (err) => {
-         
-          const errorMessage = err.error?.message || err.message || 'An error occurred while creating the task';
-          alert(`Error creating task: ${errorMessage}`);
-        }
-      });
-    } else {
-      alert('Please enter both title and description');
+    if (!token) {
+      this.message = 'You need to log in to create a post.';
+      return;
     }
+
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const postData = {
+      title: this.title,
+      description: this.description,
+    };
+
+    this.http.post('http://localhost:5000/api/posts/create', postData, { headers }).subscribe(
+      (response: any) => {
+        this.message = 'Post created successfully!';
+        this.router.navigate(['/tasks']);
+        this.title = '';
+        this.description = '';
+      },
+      (error) => {
+        console.error('Error creating post:', error);
+        this.message = 'Failed to create post. Please try again.';
+      }
+    );
   }
 }

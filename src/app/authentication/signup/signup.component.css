@@ -1,72 +1,82 @@
-/* Center the signup form */
+/* Overall container styling */
 .signup-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #f0f4f8;
-  font-family: Arial, sans-serif;
-  padding: 20px;
 }
 
-/* Style the form box */
+/* Form styling */
 .signup-form {
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
   width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
 }
 
+/* Title styling */
 .signup-form h2 {
   text-align: center;
-  color: #333;
+  font-size: 2rem;
+  font-weight: bold;
   margin-bottom: 1.5rem;
+  color: #333;
 }
 
-/* Style for labels */
+/* Label styling */
 .signup-form label {
   display: block;
-  font-weight: bold;
+  font-weight: 600;
+  color: #666;
   margin-bottom: 0.5rem;
-  color: #555;
+  font-size: 1rem;
 }
 
-/* Style for input fields */
-.signup-form input[type="text"],
-.signup-form input[type="email"],
-.signup-form input[type="password"] {
+/* Input field styling */
+.signup-form input {
   width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
+  padding: 12px;
+  font-size: 1rem;
+  margin-top: 0.5rem;
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
-  font-size: 16px;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Focus state styling for inputs */
 .signup-form input:focus {
-  border-color: #3b82f6; /* Blue border on focus */
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
   outline: none;
-  box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
 }
 
-/* Style for the register button */
+/* Button styling */
 .signup-form button {
   width: 100%;
-  padding: 0.8rem;
-  background-color: #3b82f6;
+  padding: 12px;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  background-color: #4a90e2;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
   font-weight: bold;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s ease;
 }
 
+/* Button hover effect */
 .signup-form button:hover {
-  background-color: #2563eb; /* Darker blue on hover */
+  background-color: #357abd;
+}
+
+/* Button focus effect */
+.signup-form button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(53, 122, 189, 0.5);
 }

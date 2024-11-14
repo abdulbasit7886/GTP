@@ -1,14 +1,22 @@
-
-<h2>Task List</h2>
-<div *ngIf="tasks.length > 0; else noTasks">
-  <ul>
-    <li *ngFor="let task of tasks">
-      <h3>{{ task.title }}</h3>
-      <p>{{ task.description }}</p>
-      <hr>
-    </li>
-  </ul>
+<div *ngIf="posts.length > 0; else noPosts">
+  <h2>Your Posts</h2>
+  <div *ngFor="let post of posts" class="post">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.description }}</p>
+    <small>Created on: {{ post.createdAt | date }}</small>
+    <div class="post-actions">
+      <button (click)="startEditPost(post)">Edit</button>
+      <button (click)="deletePost(post._id)">Delete</button> 
+    </div>
+    <div *ngIf="editingPost && editingPost._id === post._id" class="edit-form">
+      <input [(ngModel)]="editingPost.title" placeholder="Title" />
+      <textarea [(ngModel)]="editingPost.description" placeholder="Description"></textarea>
+      <button (click)="updatePost(editingPost)">Save</button>
+      <button (click)="cancelEdit()">Cancel</button>
+    </div>
+  </div>
 </div>
-<ng-template #noTasks>
-  <p>No tasks available.</p>
+
+<ng-template #noPosts>
+  <p>No posts to display.</p>
 </ng-template>

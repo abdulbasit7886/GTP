@@ -5,6 +5,7 @@ import { Router } from '@angular/router';  // Import Router
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
   userData = { username: '', email: '', password: '' };

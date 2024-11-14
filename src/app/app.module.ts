@@ -9,14 +9,13 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,],
 
   imports: [BrowserModule, 
     AppRoutingModule, 
     HttpClientModule, 
     AuthenticationModule,
-
-      FormsModule
+    FormsModule
     ],
 
   providers: [],

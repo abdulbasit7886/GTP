@@ -8,12 +8,7 @@ import { AuthGuard } from './authentication/auth.guard';
 import { TaskComponent } from './dashboard/tasks/tasks.component';
 
 const routes: Routes = [
-  {
-    path: "singup", component: SignupComponent 
-  },
-  {
-    path: "login", component: LoginComponent
-  },
+  
   {
     path: "dashboard", component: ViewComponent
   },

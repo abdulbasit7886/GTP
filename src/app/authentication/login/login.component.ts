@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   loginData = { email: '', password: '' };
@@ -16,6 +17,7 @@ export class LoginComponent {
     this.authService.login(this.loginData).subscribe({
       next: (response) => {
         alert('Login successful!');
+        localStorage.setItem('token', response.token); 
         console.log(response);
 
         // Save token in localStorage

@@ -1,15 +1,14 @@
-<!-- view.component.html -->
-<p>view works!</p>
-<h2>Todo App</h2>
+<div>
+  <h2>Create a Post</h2>
+  <form (submit)="createPost()">
+    <label for="title">Title:</label>
+    <input type="text" id="title" [(ngModel)]="title" name="title" required />
 
-<input type="text" [(ngModel)]="title" placeholder="Enter Task Title" />
-<br>
-<br>
-<input type="text" [(ngModel)]="description" placeholder="Enter Task Description" />
-<br>
-<br>
-<button (click)="addTask()">Add Task</button>
+    <label for="description">Description:</label>
+    <textarea id="description" [(ngModel)]="description" name="description" required></textarea>
 
+    <button type="submit">Create Post</button>
+  </form>
 
-
-
+  <p *ngIf="message">{{ message }}</p>
+</div>
