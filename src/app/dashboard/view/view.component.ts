@@ -68,4 +68,9 @@ export class ViewComponent {
       console.log(error)
     }
   }
+
+  userProfile(){
+    console.log('hereeeeeeee')
+   this.router.navigate(['/user-profile']) 
+  }
 }

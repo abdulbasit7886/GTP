@@ -12,9 +12,11 @@
     font-size: 20px;
     font-weight: bold;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
-
+.header p{
+    cursor: pointer;
+}
 
 .main{
     width: 50%;

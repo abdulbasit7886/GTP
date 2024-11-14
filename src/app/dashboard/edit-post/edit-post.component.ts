@@ -45,9 +45,9 @@ export class EditPostComponent {
     }
   }
 
-  async edit(postId: string) {
+  async edit() {
     let token = localStorage.getItem('token');
-    console.log(postId)
+    console.log(this.postId)
     console.log(this.editPost.value)
     try {
       const response = await fetch(`http://localhost:3000/post/edit-post/${this.postId}`, {
