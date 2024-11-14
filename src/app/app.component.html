@@ -1,8 +1,5 @@
-<h1>{{title}}</h1>
-<ul>
-    <li *ngFor = "let user of users">
-        {{user.name}}
-    </li>
-</ul>
-<app-counter></app-counter>
+<app-header></app-header>
+<app-banner *ngIf="router.url=='/'"></app-banner>
+<app-blog-latest *ngIf="router.url=='/'"></app-blog-latest>
 <router-outlet></router-outlet>
+<app-footer></app-footer>
