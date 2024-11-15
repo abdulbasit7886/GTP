@@ -62,7 +62,7 @@ export class ViewComponent implements OnInit {
     }).subscribe(
       (response) => {
         console.log('Post deleted successfully:', response);
-        this.router.navigateByUrl('dashboard');
+        window.location.reload();
       },
       (error) => {
         console.error('Error deleting post:', error);

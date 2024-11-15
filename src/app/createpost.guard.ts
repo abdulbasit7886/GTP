@@ -6,11 +6,11 @@ export const createpostGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
 
   const userData = localStorage.getItem('authToken');
-  if(userData){
-  
-  return true;
+  if(!userData){
+    router.navigate(['/login']);
+  return false;
+  }else{
+    return false;
   }
 
-  router.navigate(['/login']);
-  return false;
 };

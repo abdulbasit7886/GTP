@@ -7,9 +7,12 @@ export const editpostGuard: CanActivateFn = (route, state) => {
   const userData = localStorage.getItem('authToken');
   if(userData){
   
-  return true;
-  }
-
-  router.navigate(['/login']);
-  return false;
+    return true;
+    }else{
+      router.navigate(['/login']);
+      return false;
+    }
+  
+  
+  
 };

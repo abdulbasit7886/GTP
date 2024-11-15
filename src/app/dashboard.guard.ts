@@ -9,8 +9,11 @@ export const dashboardGuard: CanActivateFn = (route, state) => {
   if(userData){
   
   return true;
+  }else{
+    router.navigate(['/login']);
+    return false;
   }
 
-  router.navigate(['/login']);
-  return false;
+
+ 
 };
