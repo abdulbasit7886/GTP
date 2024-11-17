@@ -1,32 +1,70 @@
 <div class="formmaindiv">
   <div class="formdiv">
-    <h1 class="h1">Login Form</h1>
+    <h1 class="h1">Login</h1>
     <div class="formfields">
-      <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
+      <form
+        #loginForm="ngForm"
+        (ngSubmit)="loginUser(loginForm.value, loginForm)"
+      >
         <label>Email</label>
-        <br />
+
         <input
           type="email"
           placeholder="Enter Email"
           name="email"
           ngModel
           class="inputfileds"
+          required
+          email
         />
         <br />
-        <br />
+
         <label>Password</label>
-        <br />
+
         <input
           type="password"
           placeholder="Enter Password"
           name="password"
           ngModel
           class="inputfileds"
+          required
         />
+
+        <!-- <div *ngIf="submitted && loginForm.invalid" class="error_msg">
+          <div
+            *ngIf="loginForm.controls['email' ]?.errors?.['required'] ||
+                    loginForm.controls['password' ]?.errors?.['required']"
+          >
+            All fields is required.
+          </div>
+        </div> -->
+
+        <div
+          *ngIf="submitted && loginForm.controls['email']?.invalid"
+          class="error_msg"
+        >
+          <div *ngIf="loginForm.controls['email']?.errors?.['email']">
+            Please enter a valid email address.
+          </div>
+        </div>
+
+        <div *ngIf="backenderr_msg" class="error_msg">
+          {{ backenderr_msg }}
+        </div>
+
+        <div *ngIf="backendSucc_msg" class="success_msg">
+          {{ backendSucc_msg }}
+        </div>
+
         <br />
-        <br />
-        <button class="button">Login</button>
+        <button class="button" (click)="inputfieldsCheck(loginForm)">
+          Login
+        </button>
       </form>
     </div>
+    <p class="acount-msg">
+      You don't have an account, you can
+      <a routerLink="/signup" routerLinkActive="active-link">SignUp</a>
+    </p>
   </div>
 </div>

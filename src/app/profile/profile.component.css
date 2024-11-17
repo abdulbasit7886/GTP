@@ -1,0 +1,139 @@
+
+.navbar {
+  width: 102%;
+  height: 40px;
+  display: flex;
+  justify-content: space-around; 
+  align-items: center; 
+  margin-left: -1%;
+  background-color: #082674b3;
+  color: white;
+  position: fixed;
+  top: 0; 
+}
+.links{
+  width: 250px;
+  display: inline-flex;
+  justify-content: space-around;
+  margin-left: 15%;
+}
+.navbar li{
+  list-style-type: none;
+  color: white; 
+  margin-left: 20px; 
+  cursor: pointer;
+}
+.navbar a {
+  text-decoration: none; 
+  color: white;
+}
+
+.navbar a:hover {
+ color: #333; 
+}
+.navbar li:hover {
+  color: #333; 
+ }
+.maindiv{
+    width: 50%;
+    height: auto;
+    margin-top: 5%;
+    margin-left: 26%;
+}
+.heading{
+    margin-left: 25%;
+}
+.post_input{
+    margin-top: 1%;
+    margin-left: 1%;
+    width:97%;
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.textarea{
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 97%;
+    height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.add_post_but{
+    margin-left: 1%;
+    width: 98%;
+    height: 30px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: white;
+    background-color:  #082674a1;
+    border-radius: 4px;
+    border: none
+}
+.add_post_but:hover {
+    background: #082774c6;
+  }
+
+.postform{
+    width: 82%;
+    margin-top: 2%;
+    margin-left: 8%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+.post_div{
+    width: 82%;
+    margin-top: 4%;
+    margin-left: 8%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+.username{
+font-size: 18px;
+padding: 10px;
+}
+.user_posts{
+ 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    /* margin-left: 8%; */
+    border-radius: 4px;
+}
+.update_butt{
+  width: 100px;
+  height: 25px;
+  margin-bottom: 1%;
+  border-radius: 4px;
+  color: white;
+  background-color:#082674a1;
+  border: none
+}
+.update_butt:hover {
+    background: #082774c6;
+  }
+.delete_butt{
+   width: 100px;
+   height: 25px;
+   margin-left: 1%;
+   margin-bottom: 1%;
+   border-radius: 4px;
+   color: white;
+  background-color: #082674a1;
+  border: none
+}
+.delete_butt:hover {
+    background: #082774c6;
+  }
+
+.er_msg{
+    margin-left: 8%;
+}
+
+.error_msg{
+  color: red;
+  margin-left: 2%;
+}

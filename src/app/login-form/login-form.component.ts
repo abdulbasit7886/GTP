@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router'
+import { NgForm } from '@angular/forms';
+import {Router} from '@angular/router';
+import {LoginService} from '../services/login.service'
 
 @Component({
   selector: 'app-login-form',
@@ -7,26 +9,54 @@ import {Router} from '@angular/router'
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent {
-  constructor(private router: Router){}
-  loginUser(loginData: any){
+  constructor(
+    private loginService: LoginService,
+    private router: Router){}
+    
+    backenderr_msg: string = '';
+    backendSucc_msg: string = '';
 
-    const getuserData = localStorage.getItem('userdata');
-    if(getuserData){
-      const userdata = JSON.parse(getuserData);
+    submitted = false;
 
-      if(loginData.email === userdata.email && loginData.password === userdata.password){
-        console.warn("login successfully");
-        alert("login successfully");
-        this.router.navigate(['/post'])
-      }
-      else{
-        console.warn("Invalid Email or Password");
-        alert("Invalid Email or Password");
+    inputfieldsCheck(loginForm: NgForm){
+      this.submitted = true;
+      if(loginForm.invalid){
+        return;
       }
     }
-    else{
-      console.warn("user data not found");
-        alert("user data not found");
+
+  loginUser(loginData: {email: string; password: string}, loginForm: NgForm){
+
+   
+     const trimmedEmail = loginData.email.trim();
+     const trimmedPassword = loginData.password.trim();
+
+     if(!trimmedEmail || !trimmedPassword){
+      this.backenderr_msg = 'Fields are required, cannot contain only spaces';
+      this.backendSucc_msg = "";
+      return;
+     }
+
+    if(loginData.email){
+      loginData.email = loginData.email.toLowerCase();
+     }
+
+   this.loginService.loginUser(loginData).subscribe({
+    next: (res) =>{
+      console.log('User logged in successfully', res);
+      this.backendSucc_msg = res.message;
+      this.backenderr_msg= '';
+
+      if(res.token){
+        localStorage.setItem('token', res.token);
+      }
+      loginForm.reset();
+      this.router.navigate(['/profile'])
+    },
+    error: (error)=>{
+      this.backenderr_msg = error.error?.message || 'Error during login';
     }
+   })
+
   }
 }

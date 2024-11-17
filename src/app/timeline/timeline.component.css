@@ -1,0 +1,66 @@
+.navbar {
+    width: 102%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+    margin-left: -1%;
+    background-color: #082674b3;
+    color: white;
+    position: fixed;
+    top: 0; 
+  }
+  .links{
+    width: 250px;
+    display: inline-flex;
+    justify-content: space-around;
+    margin-left: 15%;
+  }
+  
+  .navbar li{
+    list-style-type: none;
+    color: white; 
+    margin-left: 20px; 
+    cursor: pointer;
+  }
+  .navbar a {
+    text-decoration: none; 
+    color: white;
+  }
+  
+  .navbar a:hover {
+   color: #333; 
+  }
+  .navbar li:hover {
+    color: #333; 
+   }
+
+
+.maindiv{
+    width: 50%;
+    height: auto;
+    margin-top: 5%;
+    margin-left: 26%;
+}
+.post_div{
+    width: 82%;
+    margin-top: 4%;
+    margin-left: 8%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+.username{
+font-size: 18px;
+padding: 10px;
+}
+.user_posts{
+ 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    /* margin-left: 8%; */
+    border-radius: 4px;
+}

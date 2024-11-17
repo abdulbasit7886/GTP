@@ -1,0 +1,66 @@
+<nav class="navbar">
+  <div class="links">
+    <li><a routerLink="/profile" routerLinkActive="active-link">Profile</a></li>
+    <li>
+      <a routerLink="/timeline" routerLinkActive="active-link">Timeline</a>
+    </li>
+    <li>
+      <a routerLink="/userprofile" routerLinkActive="active-link">UserInfo</a>
+    </li>
+    <li (click)="logout()">LogOut</li>
+  </div>
+</nav>
+<div class="main">
+  <div *ngIf="userData" class="maindiv">
+    <div>
+      <div class="postform">
+        <form #userpost="ngForm" (ngSubmit)="createpost()">
+          <input
+            type="text"
+            placeholder="Enter post title"
+            [(ngModel)]="title"
+            name="title"
+            required
+            class="post_input"
+          />
+          <br />
+          <textarea
+            placeholder="Enter description"
+            [(ngModel)]="description"
+            name="description"
+            required
+            class="textarea"
+          >
+          </textarea>
+
+          <div *ngIf="err_msg" class="error_msg">
+            {{ err_msg }}
+          </div>
+
+          <button type="submit" class="add_post_but">
+            {{ isEdit ? "Edit Post" : "Add Post" }}
+          </button>
+        </form>
+      </div>
+      <div *ngIf="posts.length > 0; else noPosts">
+        <div *ngFor="let post of posts; let i = index" class="post_div">
+          <strong class="username">{{ post.username }}</strong>
+          <div class="user_posts">
+            <p><strong> Title:</strong>{{ post.title }}</p>
+            <p><strong> Description:</strong>{{ post.description }}</p>
+            <button (click)="EditPost(i)" class="update_butt">Edit</button>
+            <button (click)="deletePost(i)" class="delete_butt">Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #noPosts>
+        <p class="er_msg">No posts available.</p>
+      </ng-template>
+    </div>
+  </div>
+
+  <div *ngIf="user">
+    <p>{{ user.username }}</p>
+  </div>
+</div>

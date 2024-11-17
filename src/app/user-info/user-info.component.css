@@ -1,0 +1,82 @@
+.navbar {
+    width: 102%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+    margin-left: -1%;
+    background-color: #082674b3;
+    color: white;
+    position: fixed;
+    top: 0; 
+  }
+  .links{
+    width: 250px;
+    display: inline-flex;
+    justify-content: space-around;
+    margin-left: 15%;
+  }
+  
+  .navbar li{
+    list-style-type: none;
+    color: white; 
+    margin-left: 20px; 
+    cursor: pointer;
+  }
+  .navbar a {
+    text-decoration: none; 
+    color: white;
+  }
+  
+  .navbar a:hover {
+   color: #333; 
+  }
+  .navbar li:hover {
+    color: #333; 
+   }
+
+.update-form{
+    width: 680px;
+    height: auto;
+    margin-top: 2%;
+    margin-left: 25%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5%;
+}
+.form{
+    width: 650px;
+    margin-left: 2%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.inputfield{
+    margin-top: 1%;
+    margin-left: 1%;
+    width:97%;
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+label{
+    margin-top: 1%;
+    margin-left: 1%;
+}
+.update_but{
+    margin-left: 1%;
+    width: 98%;
+    height: 30px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: white;
+    background-color:  #082674a1;
+    border-radius: 4px;
+    border: none
+}
+.update_but:hover {
+    background: #082774c6;
+  }
+h2{
+    display: flex;
+    justify-content: center;
+  }

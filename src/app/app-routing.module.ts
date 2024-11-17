@@ -2,18 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {SignUpComponent} from './sign-up/sign-up.component';
 import {LoginFormComponent} from './login-form/login-form.component'
-import {DisplayUserInfoComponent} from './display-user-info/display-user-info.component'
-import {signupGuard} from './signup.guard';
-import {loginGuard} from './login.guard';
-import {displayInfoGuard} from './display-info.guard'
-import{UserPostsComponent} from './user-posts/user-posts.component';
-import {userpostGuard} from './userpost.guard'
+import{ProfileComponent} from './profile/profile.component';
+import{authenticateGuard} from './guards/authenticate.guard';
+import{UserInfoComponent} from './user-info/user-info.component'
+import{TimelineComponent} from './timeline/timeline.component'
 const routes: Routes = [
-  {path: 'signup', component: SignUpComponent, canActivate: [signupGuard]},
-  {path: 'login', component: LoginFormComponent, canActivate: [loginGuard]},
-  {path: 'post', component: UserPostsComponent, canActivate: [userpostGuard]},
-  // {path: 'info', component: DisplayUserInfoComponent, canActivate: [displayInfoGuard]},
-  {path: '**', redirectTo: '/login'}
+  {path: 'signup', component: SignUpComponent },
+  {path: 'login', component: LoginFormComponent},
+  {path: 'profile', component: ProfileComponent, canActivate: [authenticateGuard]},
+  {path: 'timeline', component: TimelineComponent, canActivate: [authenticateGuard]},
+  {path: 'userprofile', component: UserInfoComponent, canActivate: [authenticateGuard]},
+  {path: '**', redirectTo: '/signup'}
 ];
 
 @NgModule({
