@@ -1,0 +1,11 @@
+<app-header></app-header>
+<div class="flex flex-col w-[60%] m-auto mt-6 gap-6 items-start">
+    <div class="font-bold">{{postDetails.title}}</div>
+    <span class="font-light">Created at: {{postDetails.createdAt | date: 'medium'}}</span>
+    <span class="font-light">Author: {{postDetails.author.username}}</span>
+    <button *ngIf="auth.username === postDetails.author.username" class="bg-slate-700 text-white px-3 py-3 self-center rounded-md">Edit post</button>
+    <div class="w-full m-auto relative h-50">
+        <img [src]="posts.imgBaseUrl+postDetails.cover" fill alt="post-image" />
+    </div>
+    <div>{{postDetails.content}}</div>
+</div>

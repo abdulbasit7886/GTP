@@ -1,0 +1,26 @@
+<form
+  class="h-screen w-screen flex flex-col justify-center items-center gap-3"
+  #login="ngForm" (ngSubmit)="checkLogin()"
+>
+  <input
+    type="text"
+    name="username"
+    placeholder="username"
+    class="custom-input p-5 w-60"
+    ngModel
+  />
+  <input
+    type="password"
+    name="password"
+    placeholder="password"
+    class="custom-input p-5 w-60"
+    ngModel
+  />
+  <button type="submit" class="bg-slate-600 rounded-lg p-5 w-60 text-white">
+    Login
+  </button>
+  <div class="flex flex-col justify-center items-center gap-3">
+    Not a user? Click below to
+    <p class="cursor-pointer text-pretty underline">Signup</p>
+  </div>
+</form>
