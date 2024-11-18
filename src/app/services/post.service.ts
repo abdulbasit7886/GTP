@@ -19,7 +19,7 @@ export class PostService {
   }
 
 
-  createPost(postData: { title: string, description: string }): Observable<any> {
+  createPost(postData: FormData): Observable<any> {
    return this.http.post(this.apiUrl, postData,{headers: this.getheaders()});
   }
 
@@ -27,7 +27,7 @@ export class PostService {
     return this.http.get(this.apiUrl, {headers: this.getheaders()});
   }
 
-  updatePost(postId: string, postData: { title: string, description: string }): Observable<any>{
+  updatePost(postId: string, postData: FormData ): Observable<any>{
     return this.http.put(`${this.apiUrl}/${postId}`, postData, {headers: this.getheaders()});
   }
 

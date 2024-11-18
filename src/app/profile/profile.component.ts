@@ -8,6 +8,7 @@ export interface Post{
   title:string ;
   description: string ;
   _id: string;
+  image?: string;
 }
 
 @Component({
@@ -22,6 +23,7 @@ export class ProfileComponent implements OnInit {
   posts: Post[] = [];
   title:string = '';
   description: string = '';
+  selectedFile: File | null = null;
   isEdit =false;
   editIndex = -1;
   err_msg: string = '';
@@ -39,9 +41,16 @@ export class ProfileComponent implements OnInit {
   }
 
 
+  onimageSelect(event: Event){
+    const fileInput = event.target as HTMLInputElement;
+    if(fileInput.files && fileInput.files.length > 0){
+      this,this.selectedFile = fileInput.files[0];
+    }
+  }
+
+  
+
   createpost(){
-
-
     const trimmedTitle = this.title.trim();
     const trimmedDescription = this.description.trim();
 
@@ -50,16 +59,28 @@ export class ProfileComponent implements OnInit {
       return;
     }
 
+    if(!this.selectedFile){
+      this.err_msg ='Please select an image to upload the post.';
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('title', trimmedTitle);
+    formData.append('description',trimmedDescription);
+    if(this.selectedFile){
+      formData.append('image', this.selectedFile);
+    }
+
 
     if(this.isEdit){
       const postId = this.posts[this.editIndex]._id;
-      this.postService.updatePost(postId,{title: this.title, description:this.description})
+      this.postService.updatePost(postId, formData)
       .subscribe((res: any) =>{
         this.fetchPosts();
         this.resetForm();
       });
     }else{
-      this.postService.createPost({ title: this.title, description: this.description })
+      this.postService.createPost(formData)
         .subscribe((res: any) => {
           this.fetchPosts();
           this.resetForm();
@@ -81,10 +102,12 @@ export class ProfileComponent implements OnInit {
   }
 
   EditPost(index: number){
+    window.scrollTo(0, 0);
     this.isEdit = true;
     this.editIndex = index;
     this.title = this.posts[index].title;
     this.description = this.posts[index].description;
+    this.selectedFile =  null;
   }
 
   deletePost(index: number){
@@ -96,6 +119,7 @@ export class ProfileComponent implements OnInit {
   resetForm() {
     this.title = '';
     this.description = '';
+    this.selectedFile = null;
     this.isEdit = false;
     this.editIndex = -1;
 }

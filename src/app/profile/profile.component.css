@@ -51,6 +51,13 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+.file_input{
+  margin-top: 1%;
+    margin-left: 1%;
+    width:97%;
+    height: 25px;
+   
+}
 .textarea{
     margin-top: 1%;
     margin-left: 1%;
@@ -90,18 +97,35 @@
 
 }
 .username{
+width: 100%;
+display: inline-flex;
+justify-content: space-between;
+color: gray;
 font-size: 18px;
 padding: 10px;
 }
+.posttitle{
+  border-bottom: 1px solid gray;
+  margin-bottom: 2%;
+  font-size: 18px; 
+  padding-bottom: 5px;
+}
 .user_posts{
- 
     border: 1px solid #ccc;
     border-radius: 5px;
     max-width: 100%;
-    margin-top: 5px;
-    padding: 10px;
-    /* margin-left: 8%; */
+    padding: 0px 10px;
     border-radius: 4px;
+}
+
+.post-image {
+  width: 100%;
+  max-width: 595px;
+  height: auto;
+  margin-top: 10px;
+}
+.postdes{
+  margin-top: -1%;
 }
 .update_butt{
   width: 100px;
@@ -137,3 +161,9 @@ padding: 10px;
   color: red;
   margin-left: 2%;
 }
+
+
+
+
+
+

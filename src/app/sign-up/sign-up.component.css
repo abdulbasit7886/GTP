@@ -48,9 +48,27 @@
     border-radius: 5px;
     font-size: 14px;
     transition: all 0.3s ease;
-    text-transform: lowercase;
 }
 .inputfileds:focus {
+  border-color: #74ebd5;
+  outline: none;
+  box-shadow: 0 0 5px rgba(116, 235, 213, 0.5);
+}
+
+.input_filed_email{
+  width: 92%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-transform: lowercase;
+}
+
+
+
+.input_filed_email:focus {
     border-color: #74ebd5;
     outline: none;
     box-shadow: 0 0 5px rgba(116, 235, 213, 0.5);
