@@ -7,6 +7,7 @@ export interface Post{
   title:string ;
   description: string ;
   _id: string;
+  image: string;
 }
 @Component({
   selector: 'app-timeline',

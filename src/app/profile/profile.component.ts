@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {PostService} from '../services/post.service';
-import {Router} from '@angular/router'
+import {Router} from '@angular/router';
+import {SocketService} from '../services/socket.service';
+import { Subscription } from 'rxjs';
 
 
 export interface Post{
@@ -17,6 +19,9 @@ export interface Post{
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+ 
+  notificationMessage: string | null = null;
+  notifications: any[] = [];
 
   userData: any = {};
   user: any;
@@ -27,13 +32,27 @@ export class ProfileComponent implements OnInit {
   isEdit =false;
   editIndex = -1;
   err_msg: string = '';
+  
 
-  constructor(private postService: PostService, private router: Router ){}
+  constructor(private postService: PostService, private router: Router,
+    private socketService: SocketService
+  ){}
 
   ngOnInit(): void {
     this.fetchPosts();
-  }
+    
+    this.socketService.listenNotification();
+
+    this.socketService.currentNotification.subscribe((message: string) =>{
+      this.notificationMessage = message;
+    });
   
+  
+  }
+
+  clearNotification() {
+    this.socketService.clearNotification();
+  }
 
   logout(){
     localStorage.removeItem('token');

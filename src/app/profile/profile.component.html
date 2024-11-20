@@ -10,6 +10,12 @@
     <li (click)="logout()">LogOut</li>
   </div>
 </nav>
+
+<div *ngIf="notificationMessage" class="notification">
+  <p>{{ notificationMessage }}</p>
+  <button (click)="clearNotification()">Close</button>
+</div>
+
 <div class="main">
   <div *ngIf="userData" class="maindiv">
     <div>
