@@ -1,0 +1,141 @@
+/* Global styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e5e5e5; 
+  }
+  
+  /* Center the login container */
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e5e5e5;  /* Light background */
+  }
+  
+  /* Login container */
+  .login-container {
+    background-color: #ffffff;
+    padding: 40px 40px 30px 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;  /* Rounded corners for a softer feel */
+    width: 360px;
+    text-align: center;
+  }
+  
+  /* Heading */
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #1DA1F2;  /* Twitter Blue */
+    font-weight: bold;
+  }
+  
+  /* Form group */
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  /* Labels */
+  label {
+    font-size: 14px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  
+  /* Input fields */
+  input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 30px;  /* Rounded inputs */
+    margin-bottom: 15px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Input focus effect */
+  input:focus {
+    border-color: #1DA1F2;  /* Highlight the border with Twitter Blue */
+    box-shadow: 0 0 5px rgba(29, 161, 242, 0.5);  /* Subtle blue glow */
+  }
+  
+  /* Invalid input field */
+  input.invalid {
+    border-color: #e74c3c;  /* Red border on invalid input */
+  }
+  
+  /* Submit button */
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #1DA1F2;  /* Twitter Blue */
+    color: white;
+    border: none;
+    border-radius: 30px;  /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background-color: #1991c1;  /* Darker shade of blue */
+  }
+  
+  /* Disabled button */
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Error message */
+  .error {
+    font-size: 12px;
+    color: #e74c3c;
+    margin-top: 5px;
+    text-align: left;
+  }
+  
+  /* Form spacing */
+  form {
+    margin-top: 20px;
+  }
+  
+  /* Footer for branding (if needed) */
+  footer {
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+    margin-top: 20px;
+  }
+  
+  /* Logo and social media icons (optional) */
+  .login-logo {
+    font-size: 50px;
+    font-weight: bold;
+    color: #1DA1F2;
+    margin-bottom: 30px;
+  }
+  .signup-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .signup-link a {
+    color: #1DA1F2;  /* Twitter-like blue */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  

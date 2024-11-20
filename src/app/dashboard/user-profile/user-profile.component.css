@@ -1,0 +1,227 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f8fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* User Profile Section */
+.user-profile {
+  background-color: #1da1f2;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.profile-info p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+}
+
+
+/* Create a Post Section */
+.post-creation-main {
+  background-color: #b1d2ed;
+  padding: 22px;
+}
+
+.post-creation {
+  background: white;
+  padding: 20px;
+  margin: 10px auto;
+  border-radius: 10px;
+  max-width: 600px;
+  border: 1px solid #e1e8ed;
+}
+
+.post-textarea {
+  width: 100%;
+  border: 1px solid #e1e8ed;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  resize: none;
+}
+
+.post-actions {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.post-btn {
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.post-btn:hover {
+  background-color: #0d8ae6;
+}
+
+/* User Posts Section */
+.user-posts {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.post-list {
+  border-bottom: 1px solid #0095ff;
+}
+
+.post-author {
+  background-color: #0095ff;
+  width: fit-content;
+  padding: 7px;
+  border-radius: 8px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.post {
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid #0095ff;
+  padding: 10px 20px;
+  height: 350px; /* Fixed height for posts */
+  width: 100%; /* Ensure posts occupy full width */
+  max-width: 600px; /* Limit width */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-content {
+  flex: 1;
+  overflow: hidden; /* Prevent overflowing content */
+}
+
+.post-content p {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.post-image {
+  width: 100%; /* Ensure images fill the post width */
+  height: 250px; /* Fixed height for images */
+  object-fit: cover; /* Maintain aspect ratio and crop excess */
+  border-radius: 5px;
+  object-position: top;
+  margin-top: 10px;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.update-btn,
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  color: #1da1f2;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.update-btn:hover,
+.delete-btn:hover {
+  text-decoration: underline;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-textarea {
+  width: 100%;
+  border: 1px solid #e1e8ed;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.modal-actions {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.save-btn,
+.close-btn {
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.9rem;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.close-btn {
+  background-color: #e0245e;
+}
+
+.save-btn:hover {
+  background-color: #0d8ae6;
+}
+
+.close-btn:hover {
+  background-color: #c51b4a;
+}
+
+/* No Posts Styling */
+.no-posts {
+  text-align: center;
+  color: #657786;
+  font-size: 1rem;
+}
+
+.user-main-post {
+  padding: 100px;
+}
+
+/* Action Buttons Styling */
+.like-btn,
+.comment-btn,
+.share-btn,
+.update-btn,
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  color: #1da1f2;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-right: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}

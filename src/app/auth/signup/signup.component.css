@@ -1,0 +1,129 @@
+/* Global styles for main container */
+.main {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f8fa;  /* Light background similar to Twitter's theme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Signup form container */
+  .signup-container {
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;  /* Making the form responsive */
+    text-align: center;
+  }
+  
+  /* Heading style */
+  h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #1da1f2;  /* Twitter blue color */
+    font-weight: bold;
+  }
+  
+  /* Form group (inputs and labels) */
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  /* Label styling */
+  label {
+    font-size: 14px;
+    color: #657786;  /* A softer grey */
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Input fields and select box styling */
+  input, select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccd6dd;  /* Light grey border */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  /* Focus state styling */
+  input:focus, select:focus {
+    border-color: #1da1f2;  /* Highlight border with Twitter blue */
+    box-shadow: 0 0 4px rgba(29, 161, 242, 0.5);  /* Glow effect */
+  }
+  
+  /* Invalid input fields */
+  input.invalid, select.invalid {
+    border-color: #e74c3c;
+  }
+  
+  /* Button styling */
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #1da1f2;  /* Twitter blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button hover and active states */
+  button:hover {
+    background-color: #1991c3;  /* Darker blue on hover */
+  }
+  
+  /* Disabled button state */
+  button:disabled {
+    background-color: #aab8c2;  /* Light grey when disabled */
+    cursor: not-allowed;
+  }
+  
+  /* Error message styling */
+  .error {
+    font-size: 12px;
+    color: #e74c3c;
+    margin-top: 5px;
+  }
+  
+  /* Form margins */
+  form {
+    margin-top: 20px;
+  }
+  
+  /* Additional touch for form layout */
+  .form-group input,
+  .form-group select {
+    transition: transform 0.2s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    transform: translateY(-2px);  /* Slight lift effect on focus */
+  }
+  .signup-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .signup-link a {
+    color: #1DA1F2;  /* Twitter-like blue */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }  

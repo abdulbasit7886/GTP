@@ -1,0 +1,41 @@
+<div class="main">
+  <!-- Update Profile Section -->
+<div class="container">
+  <div class="form-group">
+    <label for="name" class="form-label">Name:</label>
+    <input type="text" id="name" [(ngModel)]="name" class="form-input" placeholder="Enter your name" />
+  </div>
+  
+  <div class="form-group">
+    <label for="password" class="form-label">New Password:</label>
+    <input
+      type="password"
+      id="password"
+      [(ngModel)]="password"
+      class="form-input"
+      placeholder="Enter new password (optional)"
+    />
+  </div>
+  
+  <div class="form-group">
+    <label for="confirmPassword" class="form-label">Confirm New Password:</label>
+    <input
+      type="password"
+      id="confirmPassword"
+      [(ngModel)]="confirmPassword"
+      class="form-input"
+      placeholder="Confirm new password"
+    />
+  </div>
+  
+  <button (click)="updateProfile()" class="update-button">Update Profile</button>
+  
+  <hr />
+  
+  <!-- Delete Account Section -->
+  <div class="delete-section">
+    <button class="delete-button" (click)="deleteAccount()">Delete Account</button>
+  </div>
+  
+</div>
+</div>

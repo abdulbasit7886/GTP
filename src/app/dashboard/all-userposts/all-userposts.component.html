@@ -1,0 +1,35 @@
+<div class="posts-container">
+  <h1 style="text-align: center; padding: 20px; color: rgb(0, 0, 0); background-color: rgb(215, 237, 250); border-radius: 10px; margin: 15px;">Timeline</h1>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <!-- No Posts Found -->
+  <div *ngIf="!errorMessage && allPosts.length === 0" class="no-posts">
+    No posts found.
+  </div>
+
+  <!-- Posts Timeline -->
+  <div *ngIf="allPosts.length > 0">
+    <div *ngFor="let postGroup of allPosts" class="post-group">
+      <div *ngFor="let post of postGroup.posts" class="post">
+        <div class="post-content">
+          <!-- User Information -->
+      <div class="user-info">
+        <h3 class="user-name">{{ postGroup.userName }}</h3> <!-- Display user's name -->
+      </div>
+          <p>{{ post.content }}</p>
+          <img *ngIf="post.image" [src]="'http://localhost:4000' + post.image" alt="Post image" />
+        </div>
+        <div class="post-meta">
+          <span class="post-timestamp">{{ post.timestamp | date:'medium' }}</span>
+        </div>
+        <div class="post-actions">
+          <button class="action-btn"><i class="fa fa-heart"></i> Like</button>
+          <button class="action-btn"><i class="fa fa-comment"></i> Comment</button>
+          <button class="action-btn"><i class="fa fa-share"></i> Share</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

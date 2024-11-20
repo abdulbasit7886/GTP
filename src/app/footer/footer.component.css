@@ -1,0 +1,9 @@
+/* footer.component.css */
+footer {
+  background-color: #1DA1F2; /* Twitter Blue */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  

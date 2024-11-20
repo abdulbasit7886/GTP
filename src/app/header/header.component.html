@@ -1,0 +1,11 @@
+<nav *ngIf="!isLoginOrSignupPage" class="header">
+  <div class="logo">Linkee<i class="fa-solid fa-square-share-nodes"></i></div>
+  <ul class="menu">
+    <li><a routerLink="dashboard/all-userposts"><i class="fas fa-home"></i> HOME</a></li>
+    <li><a routerLink="dashboard/user-profile"><i class="fas fa-user"></i> PROFILE</a></li>
+    <li><a routerLink="dashboard/user-settings"><i class="fas fa-cog"></i> SETTINGS </a></li>
+  </ul>
+  <div class="logout">
+    <button (click)="logout()">Logout</button>
+  </div>
+</nav>

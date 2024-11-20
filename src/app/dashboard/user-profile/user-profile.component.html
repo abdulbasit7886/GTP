@@ -1,0 +1,86 @@
+<!-- User Profile Section -->
+<section class="user-profile">
+  <div class="profile-info">
+    <h2>{{ user.name }}</h2>
+    <p>{{ user.email }}</p>
+  </div>
+</section>
+
+<hr />
+
+<!-- Create a Post Section -->
+<div class="post-creation-main">
+  <div class="post-creation">
+    <div class="post-input">
+  <textarea
+    [(ngModel)]="postContent"
+    placeholder="What's happening?"
+    rows="3"
+    class="post-textarea"
+  ></textarea>
+  <input type="file" (change)="onFileSelect($event)" class="file-input" />
+  <div class="post-actions">
+    <button class="post-btn" (click)="createPost()">Tweet</button>
+  </div>
+</div>
+</div>
+</div>
+<!-- User Posts Section -->
+<div class="user-main-post">
+  <section class="user-posts">
+    
+    <!-- Check if there are posts -->
+    <div *ngIf="user?.post?.length > 0; else noPosts" class="post-list">
+      <div *ngFor="let post of user.post; let i = index" class="post">
+        <div class="post-content">
+          <h4 class="post-author">{{ post.name }}</h4> <!-- Display user's name -->
+          <p>{{ post.content }}</p>
+          <img
+            *ngIf="post.image"
+            [src]="'http://localhost:4000' + post.image"
+            alt="Post Image"
+            class="post-image"
+          />
+        </div>
+        <div class="post-actions">
+          <button class="like-btn">
+            <i class="fa fa-heart"></i> Like
+          </button>
+          <button class="comment-btn">
+            <i class="fas fa-comment"></i> Comment
+          </button>
+          <button class="share-btn">
+            <i class="fas fa-share"></i> Share
+          </button>
+          <button (click)="openUpdateModal(post, i)" class="update-btn">
+            <i class="fas fa-edit"></i> Edit
+          </button>
+          <button (click)="deletePost(i)" class="delete-btn">
+            <i class="fas fa-trash"></i> Delete
+          </button>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Template for when no posts exist -->
+    <ng-template #noPosts>
+      <p class="no-posts">No posts to display.</p>
+    </ng-template>
+  </section>
+</div>
+
+
+<!-- Modal -->
+<div class="modal-overlay" *ngIf="isModalOpen">
+  <div class="modal">
+    <h3>Edit Post</h3>
+    <textarea [(ngModel)]="modalContent" rows="4" class="modal-textarea"></textarea>
+    <input type="file" (change)="onModalFileSelect($event)" class="file-input" />
+    <div class="modal-actions">
+        <button (click)="updatePost(modalIndex)" class="save-btn">Save</button>
+        <button (click)="closeModal()" class="close-btn">Cancel</button>
+    </div>
+</div>
+
+</div>
