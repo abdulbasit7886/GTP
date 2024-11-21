@@ -24,7 +24,7 @@ export class LoginComponent {
         if (response.token) {
           this.authService.saveToken(response.token);
         }
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['']);
       },
       error: (error) => {
         alert('Login failed. Please check your credentials.');

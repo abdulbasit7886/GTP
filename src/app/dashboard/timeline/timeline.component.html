@@ -1,0 +1,14 @@
+<div class="timeline-container">
+  <!-- No Posts Message -->
+  <div *ngIf="posts.length === 0" class="no-posts">
+    <p>no posts</p>
+  </div>
+
+  <!-- Post Cards -->
+  <div *ngFor="let post of posts" class="post-card">
+    <h3>{{ post.username }}</h3>
+    <h3>{{ post.title }}</h3>
+    <img [src]="post.picture" alt="Post Image">
+    <p>{{ post.description }}</p>
+  </div>
+</div>

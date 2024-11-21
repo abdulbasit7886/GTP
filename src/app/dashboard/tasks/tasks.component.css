@@ -1,65 +1,141 @@
-.post {
-  padding: 16px;
-  margin-bottom: 16px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+/* General container styling */
+div {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  color: #333;
 }
 
+/* Header styling */
+h2 {
+  font-size: 24px;
+  color: #444;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Post styling */
+.post {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post h3 {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.post p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Image styling */
+.post img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Date styling */
+.post small {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 15px;
+}
+
+/* Post actions styling */
 .post-actions {
-  margin-top: 8px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .post-actions button {
-  background-color: #007bff;
-  color: #fff;
+  padding: 8px 12px;
+  font-size: 14px;
   border: none;
-  padding: 6px 12px;
-  margin-right: 8px;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
 .post-actions button:hover {
-  background-color: #0056b3;
+  background-color: #ddd;
+  transform: scale(1.05);
 }
 
+.post-actions button:nth-child(1) {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+
+.post-actions button:nth-child(2) {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+
+.post-actions button:nth-child(3) {
+  background-color: #2196f3; /* Blue */
+  color: white;
+}
+
+/* Edit form styling */
 .edit-form {
-  margin-top: 12px;
-  padding: 12px;
-  background-color: #f0f0f0;
+  margin-top: 15px;
+  background-color: #eef;
+  padding: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 .edit-form input,
 .edit-form textarea {
-  width: 100%;
-  margin-bottom: 8px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
   font-size: 14px;
+  resize: none;
 }
 
 .edit-form button {
-  background-color: #28a745;
-  color: #fff;
+  padding: 8px 12px;
+  font-size: 14px;
+  margin-right: 10px;
   border: none;
-  padding: 6px 12px;
-  margin-right: 8px;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
+.edit-form button:nth-child(1) {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+
+.edit-form button:nth-child(2) {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+
 .edit-form button:hover {
-  background-color: #218838;
+  background-color: #ddd;
 }
 
-.edit-form button:last-child {
-  background-color: #dc3545;
-}
-
-.edit-form button:last-child:hover {
-  background-color: #c82333;
+/* No posts template */
+p {
+  font-size: 16px;
+  color: #777;
+  text-align: center;
 }

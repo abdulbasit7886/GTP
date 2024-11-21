@@ -24,9 +24,29 @@ exports.login = async (req, res) => {
             return res.status(401).json({ success: false, message: 'Invalid email or password' });
         }
 
-        const token = jwt.sign({ id: user._id }, 'your_jwt_secret', { expiresIn: '1h' });
+        const token = jwt.sign({ id: user._id , username: user.username}, 'your_jwt_secret', { expiresIn: '1h' });
         res.status(200).json({ success: true, token });
     } catch (error) {
         res.status(500).json({ success: false, message: error.message });
     }
 };
+
+
+
+//get all that is register
+exports.getAllUsers = async (req, res) => {
+    try {
+        const users = await User.find().select('-password'); 
+        res.status(200).json({
+            success: true,
+            users,
+        });
+    } catch (error) {
+        console.error('Error in getAllUsers:', error.message); // Log the error
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
+
+
+
+

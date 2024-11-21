@@ -1,0 +1,16 @@
+<div class="menu-container">
+    <!-- Menu Button -->
+    <button (click)="toggleMenu()" class="menu-toggle">
+        ☰
+    </button>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" [class.active]="menuOpen">
+        <ul class="menu-items">
+            <button class="btn" routerLink="/tasks">profile</button>
+            <button class="btn" routerLink="/signup">singnup</button>
+            <button class="btn" routerLink="/dashboard">Create Task</button>
+            <button class="btn" routerLink="/login">login</button>
+        </ul>
+    </div>
+

@@ -1,14 +1,14 @@
-<div>
-  <h2>Create a Post</h2>
-  <form (submit)="createPost()">
-    <label for="title">Title:</label>
-    <input type="text" id="title" [(ngModel)]="title" name="title" required />
+<app-navbar></app-navbar>
 
-    <label for="description">Description:</label>
-    <textarea id="description" [(ngModel)]="description" name="description" required></textarea>
+<form (submit)="createPost($event)" method="POST" enctype="multipart/form-data" id="createPostForm">
+  <label for="title">Title:</label>
+  <input type="text" id="title" [(ngModel)]="title" name="title" required />
 
-    <button type="submit">Create Post</button>
-  </form>
+  <label for="description">Description:</label>
+  <textarea id="description" [(ngModel)]="description" name="description" required></textarea>
 
-  <p *ngIf="message">{{ message }}</p>
-</div>
+  <label for="postPicture">Picture:</label>
+  <input type="file" id="postPicture" (change)="onFileSelected($event)" name="postPicture" required />
+
+  <button type="submit">Create Post</button>
+</form>

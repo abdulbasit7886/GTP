@@ -1,73 +1,83 @@
+/* General Form Styles */
+form#createPostForm {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
 
-div {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+/* Label Styles */
+form#createPostForm label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Input and Textarea Styles */
+form#createPostForm input[type="text"],
+form#createPostForm textarea,
+form#createPostForm input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form#createPostForm input[type="text"]:focus,
+form#createPostForm textarea:focus,
+form#createPostForm input[type="file"]:focus {
+  border-color: #4c6ef5;
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 110, 245, 0.5);
+}
+
+/* Textarea Specific Styles */
+form#createPostForm textarea {
+  resize: none;
+  height: 120px;
+}
+
+/* Button Styles */
+form#createPostForm button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #4c6ef5;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form#createPostForm button[type="submit"]:hover {
+  background-color: #364fc7;
+  transform: scale(1.03);
+}
+
+form#createPostForm button[type="submit"]:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  form#createPostForm {
+    padding: 15px;
   }
-  
-  h2 {
-    text-align: center;
-    color: #333;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  label {
-    font-weight: bold;
-    color: #555;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  input[type="text"],
-  textarea {
-    width: 100%;
+
+  form#createPostForm button[type="submit"] {
+    font-size: 0.9rem;
     padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    transition: border-color 0.3s;
   }
-  
-  input[type="text"]:focus,
-  textarea:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  p {
-    text-align: center;
-    font-size: 1rem;
-    color: #28a745;
-    margin-top: 1rem;
-  }
-  
-  p.error {
-    color: #dc3545;
-  }
-  
+}

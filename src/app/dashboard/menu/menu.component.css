@@ -1,0 +1,89 @@
+/* Main container styling */
+.menu-container {
+    display: flex;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    margin-top: 70px;
+    width: 250px;
+    height: 100vh; 
+    background-color: #415c77; 
+    color: #ecf0f1; 
+    position: fixed;
+    left: -250px; 
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 1000; 
+    padding-top: 20px; 
+  }
+
+  .sidebar.active {
+    left: 0; 
+  }
+
+  .menu-items {
+    list-style: none;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+  }
+  
+
+  .btn {
+    width: 90%;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #ecf0f1; 
+    background-color: #34495e; 
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #1abc9c; 
+    transform: translateY(-2px); 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Menu toggle button */
+  .menu-toggle {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001; /* Ensure it stays on top of everything */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .menu-toggle:hover {
+    background-color: #1abc9c;
+    transform: rotate(90deg); /* Rotate icon for a fun effect */
+  }
+  
+  /* Add responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 200px; /* Adjust width for smaller screens */
+    }
+    .btn {
+      font-size: 14px; /* Adjust button font size */
+    }
+  }
+  

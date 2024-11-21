@@ -1,0 +1,77 @@
+
+
+/* Timeline Container Styling */
+.timeline-container {
+  max-width: 800px;
+  width: 100%;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+  margin-top: 10px;
+}
+
+/* No Posts Message Styling */
+.no-posts {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #888;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Post Card Styling */
+.post-card {
+  background-color: #fff;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Title Styling */
+.post-card h3 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+/* Post Image Styling */
+.post-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  object-fit: cover;
+  max-height: 400px; /* Limit max height */
+}
+
+/* Post Description Styling */
+.post-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 10px;
+  word-wrap: break-word;
+}
+
+/* Spacing and Border Reset */
+.timeline-container,
+.timeline-container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

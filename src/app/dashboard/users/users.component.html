@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div *ngFor="let user of users; let i = index" class="user-card">
+  <h3>{{ user.username }}</h3>
+  <p>{{ user.email }}</p>
+  <button
+    [disabled]="user.followed" 
+    (click)="followUser(i)"
+    class="follow-btn"
+  >
+    {{ user.followed ? 'Followed' : 'Follow' }}
+  </button>
+</div>

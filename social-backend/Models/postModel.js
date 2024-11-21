@@ -4,20 +4,29 @@ const postSchema = new mongoose.Schema({
     user: { 
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: true
+        required: true,
+        index: true, // Index for faster queries
     },
+
+    username:{
+        type:String,
+        ref: 'User'
+    },
+
     title: {
         type: String,
-        required: true
+        required: true,
     },
+
     description: {
         type: String,
-        required: true
+        required: true,
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    }
-});
+    
+    picture: {
+        type: String,
+      
+    },
+}, { timestamps: true }); 
 
 module.exports = mongoose.model('Post', postSchema);

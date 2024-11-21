@@ -1,0 +1,21 @@
+<div class="navbar">
+  <div class="img"></div>
+
+  <ul>
+    <li><a routerLink="/">Timeline</a></li>
+    <li><a routerLink="/tasks">Profile</a></li>
+    <li><a routerLink="/users">Connect People</a></li>
+    <li class="profile-picture">
+      <img src="https://png.pngtree.com/thumb_back/fh260/background/20230612/pngtree-in-the-style-of-2d-game-art-image_2884743.jpg" alt="Profile Picture">
+    </li>
+    <li><a routerLink="/about">About</a></li>
+    <li><a routerLink="/create">Upload +</a></li>
+    <li><a routerLink="/notification">Notification</a></li>
+  </ul>
+
+  <!-- Conditional buttons -->
+  <div>
+    <button *ngIf="isLoggedIn" class="btn" (click)="logout()">Logout</button>
+    <button *ngIf="!isLoggedIn" class="btn" routerLink="/login">Login</button>
+  </div>
+</div>
