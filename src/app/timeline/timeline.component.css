@@ -1,39 +1,4 @@
-.navbar {
-    width: 102%;
-    height: 40px;
-    display: flex;
-    justify-content: space-around; 
-    align-items: center; 
-    margin-left: -1%;
-    background-color: #082674b3;
-    color: white;
-    position: fixed;
-    top: 0; 
-  }
-  .links{
-    width: 250px;
-    display: inline-flex;
-    justify-content: space-around;
-    margin-left: 15%;
-  }
-  
-  .navbar li{
-    list-style-type: none;
-    color: white; 
-    margin-left: 20px; 
-    cursor: pointer;
-  }
-  .navbar a {
-    text-decoration: none; 
-    color: white;
-  }
-  
-  .navbar a:hover {
-   color: #333; 
-  }
-  .navbar li:hover {
-    color: #333; 
-   }
+
 
 
 .maindiv{
@@ -76,4 +41,89 @@ padding: 10px;
 }
 .postdes{
   margin-top: -1%;
+}
+
+/* timeline.component.css */
+.notification-panel {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 300px;
+  z-index: 9999;
+}
+
+.notification {
+  background-color: #444;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+
+button.following {
+  background-color: green;
+}
+
+button.pending {
+  background-color: gray;
+}
+
+/* Notification style */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  z-index: 9999;
+  animation: slideIn 0.5s ease-in-out, fadeOut 4.5s forwards;
+}
+
+/* Slide in animation */
+@keyframes slideIn {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  100% {
+    top: 20px;
+    opacity: 1;
+  }
+}
+
+/* Fade out animation after 5 seconds */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: -100px;
+  }
+}
+
+.reshareusername{
+  padding: 5px 5px 5px 5px;
+  border-bottom: 1px solid gray;
+}
+.resharebtn{
+  margin-left: 2%;
+}
+
+.reshared-by {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 5px;
 }

@@ -19,7 +19,10 @@ import {LoginFormRoutingModule} from './login-form/login-form-routing.module';
 
 import { ProfileComponent } from './profile/profile.component';
 import { TimelineComponent } from './timeline/timeline.component';
-import { UserInfoComponent } from './user-info/user-info.component'
+import { UserInfoComponent } from './user-info/user-info.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { ContactInfoComponent } from './contact-info/contact-info.component';
+import { HeaderComponent } from './header/header.component'
 
 
 
@@ -29,7 +32,10 @@ import { UserInfoComponent } from './user-info/user-info.component'
     LoginFormComponent,
     ProfileComponent,
     TimelineComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    NotificationsComponent,
+    ContactInfoComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

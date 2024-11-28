@@ -5,13 +5,19 @@ import {LoginFormComponent} from './login-form/login-form.component'
 import{ProfileComponent} from './profile/profile.component';
 import{authenticateGuard} from './guards/authenticate.guard';
 import{UserInfoComponent} from './user-info/user-info.component'
-import{TimelineComponent} from './timeline/timeline.component'
+import{TimelineComponent} from './timeline/timeline.component';
+import {NotificationsComponent} from './notifications/notifications.component'
+import {ContactInfoComponent} from './contact-info/contact-info.component'
+
+
 const routes: Routes = [
   {path: 'signup', component: SignUpComponent },
   {path: 'login', component: LoginFormComponent},
   {path: 'profile', component: ProfileComponent, canActivate: [authenticateGuard]},
   {path: 'timeline', component: TimelineComponent, canActivate: [authenticateGuard]},
   {path: 'userprofile', component: UserInfoComponent, canActivate: [authenticateGuard]},
+  {path: 'notification', component: NotificationsComponent, canActivate: [authenticateGuard]},
+  {path: 'contact', component: ContactInfoComponent, canActivate: [authenticateGuard]},
   {path: '**', redirectTo: '/signup'}
 ];
 

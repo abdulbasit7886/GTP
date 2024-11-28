@@ -50,6 +50,7 @@ export class ProfileComponent implements OnInit {
   
   }
 
+
   clearNotification() {
     this.socketService.clearNotification();
   }
@@ -142,4 +143,12 @@ export class ProfileComponent implements OnInit {
     this.isEdit = false;
     this.editIndex = -1;
 }
+
+
+
+
+
+
+
+
 }

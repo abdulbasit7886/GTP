@@ -1,0 +1,28 @@
+<div class="friend-list-container">
+  <h2>Your Friends</h2>
+  <ul>
+    <li *ngFor="let friend of friends" class="friend-item">
+      <div class="friend-details">
+        <strong class="friend-name">{{ friend }}</strong>
+
+        <button (click)="removeFriend(friend)" class="btn-remove">
+          Remove
+        </button>
+      </div>
+      <div>
+        <button (click)="fetchMutualFriends(friend)" class="btn-show">
+          Mutual Friends
+        </button>
+        <!-- Display mutual friends -->
+        <ul *ngIf="mutualFriends[friend]" class="mutual-friends-list">
+          <li
+            *ngFor="let mutualFriend of mutualFriends[friend]"
+            class="mutual-friend-item"
+          >
+            {{ mutualFriend }}
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

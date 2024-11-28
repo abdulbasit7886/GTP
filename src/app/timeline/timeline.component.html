@@ -1,19 +1,17 @@
-<nav class="navbar">
-  <div class="links">
-    <li><a routerLink="/profile" routerLinkActive="active-link">Profile</a></li>
-    <li>
-      <a routerLink="/timeline" routerLinkActive="active-link">Timeline</a>
-    </li>
-    <li>
-      <a routerLink="/userprofile" routerLinkActive="active-link">UserInfo</a>
-    </li>
-    <li (click)="logout()">LogOut</li>
-  </div>
-</nav>
-
 <div class="maindiv">
   <div *ngIf="posts.length > 0; else noPosts">
     <div *ngFor="let post of posts" class="post_div">
+      <!-- Show Reshare Info -->
+      <div
+        *ngIf="post.resharedBy && post.resharedBy.length > 0"
+        class="reshareusername"
+      >
+        <strong>Reshared by:</strong>
+        <span *ngFor="let user of post.resharedBy; let isLast = last">
+          {{ user }}<span *ngIf="!isLast">, </span>
+        </span>
+      </div>
+
       <strong class="username">{{ post.username }}</strong>
       <div class="user_posts">
         <p class="posttitle">{{ post.title }}</p>
@@ -27,6 +25,21 @@
           alt="Post Image"
           class="post-image"
         />
+
+        <!-- Follow button logic -->
+
+        <button
+          *ngIf="post.status !== 'accepted'"
+          (click)="followUser(post.username)"
+        >
+          {{ post.status === "pending" ? "pending" : "Follow" }}
+        </button>
+
+        <span *ngIf="post.status === 'accepted'">Following</span>
+
+        <!-- Indicator for Reshared Post -->
+
+        <button (click)="reshare(post._id)" class="resharebtn">Reshare</button>
       </div>
     </div>
   </div>
@@ -34,4 +47,42 @@
   <ng-template #noPosts>
     <p>No posts available.</p>
   </ng-template>
+
+  <!-- Notifications Section -->
+  <!-- <div *ngIf="notifications.length > 0" class="notifications">
+    <div *ngFor="let notification of notifications" class="notification">
+      <p>{{ notification.message }}</p>
+
+      Accept Friend Request Button -->
+  <!-- <button
+        *ngIf="notification.type === 'friend-request'"
+        (click)="acceptFollowRequest(notification.id)"
+      >
+        Accept Request
+      </button>
+
+      <button (click)="dismissNotification(notification.id)">Dismiss</button>
+    </div>
+  </div>
+
+ Display Current Notification (optional) -->
+  <!-- <div *ngIf="currentNotification" class="current-notification">
+    <p>{{ currentNotification }}</p>
+  </div>  -->
+  <!-- 
+  <div *ngIf="notifications.length > 0" class="notifications">
+    <div *ngFor="let notification of notifications" class="notification">
+      <p>{{ notification.message }}</p>
+
+      <button
+        *ngIf="notification.type === 'friend-request'"
+        (click)="acceptFollowRequest(notification.id)"
+      >
+        Accept Request
+      </button>
+
+      <button (click)="dismissNotification(notification.id)">Dismiss</button>
+    </div>
+  </div>
+</div> -->
 </div>

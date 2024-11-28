@@ -1,16 +1,3 @@
-<nav class="navbar">
-  <div class="links">
-    <li><a routerLink="/profile" routerLinkActive="active-link">Profile</a></li>
-    <li>
-      <a routerLink="/timeline" routerLinkActive="active-link">Timeline</a>
-    </li>
-    <li>
-      <a routerLink="/userprofile" routerLinkActive="active-link">UserInfo</a>
-    </li>
-    <li (click)="logout()">LogOut</li>
-  </div>
-</nav>
-
 <div *ngIf="notificationMessage" class="notification">
   <p>{{ notificationMessage }}</p>
   <button (click)="clearNotification()">Close</button>
@@ -58,6 +45,7 @@
       <div *ngIf="posts.length > 0; else noPosts">
         <div *ngFor="let post of posts; let i = index" class="post_div">
           <strong class="username">{{ post.username }}</strong>
+
           <div class="user_posts">
             <p class="posttitle">{{ post.title }}</p>
             <p class="postdes">

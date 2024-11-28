@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {Router} from '@angular/router';
 import {LoginService} from '../services/login.service'
+import {SocketService} from '../services/socket.service'
 
 @Component({
   selector: 'app-login-form',
@@ -11,7 +12,9 @@ import {LoginService} from '../services/login.service'
 export class LoginFormComponent {
   constructor(
     private loginService: LoginService,
-    private router: Router){}
+    private router: Router,
+    private socketService: SocketService
+  ){}
     
     backenderr_msg: string = '';
     backendSucc_msg: string = '';
@@ -47,9 +50,19 @@ export class LoginFormComponent {
       this.backendSucc_msg = res.message;
       this.backenderr_msg= '';
 
+      localStorage.removeItem('username');
+      localStorage.removeItem('token');
+
       if(res.token){
         localStorage.setItem('token', res.token);
+        localStorage.setItem('username', res.username);
+
+        // Emit joinRoom event after successful login
+        const username = localStorage.getItem('username') as string;
+        this.socketService.joinRoom(username); 
       }
+
+      
       loginForm.reset();
       this.router.navigate(['/profile'])
     },
