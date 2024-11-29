@@ -6,7 +6,7 @@ export const dashboardGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
 
   const userData = localStorage.getItem('authToken');
-  if(userData){
+  if(userData != null){
   
   return true;
   }else{

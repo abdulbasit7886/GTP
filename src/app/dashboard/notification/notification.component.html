@@ -1,0 +1,77 @@
+<div class="nav-container">
+  <div class="navbar">
+    <div class="logo"></div>
+    <nav>
+      <ul>
+        <li>
+          <i class="fa-solid fa-user"></i
+          ><a routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-upload"></i
+          ><a routerLink="/createpost" routerLinkActive="active-link">Upload</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-gear"></i
+          ><a routerLink="/userinfo" routerLinkActive="active-link">Settings</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-search"></i
+          ><a routerLink="/search" routerLinkActive="active-link">Search</a>
+        </li>
+        <li>
+          <a routerLink="/notifications"
+            ><i class="fa-solid fa-bell"></i
+          ></a>
+        </li>
+      </ul>
+    </nav>
+    <button (click)="logout()" class="logout-button">
+      <i class="fa-solid fa-right-from-bracket"></i>Logout
+    </button>
+  </div>
+</div>
+<div class="notifications-container">
+  <h2>Notifications</h2>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Notifications List -->
+  <ul *ngIf="notifications.length > 0; else noNotifications">
+    <li *ngFor="let notification of notifications">
+      <div class="notification-item">
+        <p>{{ notification.senderId.name }} sent you a friend request</p>
+        <div class="action-buttons">
+          <ng-container *ngIf="!notification.status">
+            <button
+              (click)="acceptRequest(notification)"
+              class="accept-button"
+            >
+              Accept
+            </button>
+            <button
+              (click)="rejectRequest(notification)"
+              class="reject-button"
+            >
+              Reject
+            </button>
+          </ng-container>
+          <ng-container *ngIf="notification.status === 'accepted'">
+            <button class="friends-button" disabled>Friends</button>
+          </ng-container>
+          <ng-container *ngIf="notification.status === 'rejected'">
+            <button class="rejected-button" disabled>Rejected</button>
+          </ng-container>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <!-- No Notifications Fallback -->
+  <ng-template #noNotifications>
+    <p>No notifications to show.</p>
+  </ng-template>
+</div>

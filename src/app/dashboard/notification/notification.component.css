@@ -1,0 +1,181 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    /* padding: 8px; */
+   background-color: #15080888;
+    /* border-radius: 8px; */
+    margin-bottom: 30px;
+    /* width: 100vw; */
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.navbar ul li {
+    margin-right: 20px;
+    list-style: none;
+    color: white;
+    margin-top: 10px;
+
+
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+
+}
+.navbar ul li a:hover{
+    color:  rgb(102, 5, 137);
+}
+.navbar ul li i{
+    margin-right: 5px;
+}
+.navbar button{
+    margin-top: 20px;
+    padding: 5px 10px;
+    margin-right: 20px;
+}
+.navbar button i{
+    margin-right: 5px;
+}
+.logo{
+    background-image: url('../../../assets/images/Untitled_design-removebg-preview.png');
+    background-size: cover;
+    height: 70px;
+    width: 70px;
+    color: white;
+    margin-left: 20px;
+}
+.logout-button{
+    height: 30px;
+    width: 100px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+.logout-button:hover{
+    background-color: rgb(102, 5, 137);
+    transition: all 0.2s;
+    color: white;
+}
+.notifications-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color:  #277ae692;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(22, 124, 161, 0.5);
+    margin-top: 100px;
+  }
+  .notification-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: transparent;
+    box-shadow: 0 4px 8px rgba(22, 124, 161, 0.5);
+    color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .accept-button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .accept-button:hover {
+    background-color: #45a049;
+  }
+  
+  .reject-button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .reject-button:hover {
+    background-color: #e53935;
+  }
+  .friends-button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .friends-button:hover {
+    background-color: #45a049;
+  }
+  .rejected-button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .rejected-button:hover {
+    background-color: red;
+  }
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 15px;
+    padding: 10px;
+    /* border-bottom: 1px solid #ddd; */
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  

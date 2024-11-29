@@ -1,4 +1,19 @@
-<div class="container">
+<div class="nav-container">
+  <div class="navbar">
+    <div class="logo"></div>
+    <nav>
+      <ul>
+        <li><i class="fa-solid fa-user"></i><a routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a></li>
+        <li><i class="fa-solid fa-upload"></i><a routerLink="/createpost" routerLinkActive="active-link">Upload</a></li>
+        <li><i class="fa-solid fa-gear"></i><a routerLink="/userinfo" routerLinkActive="active-link">Settings</a></li>
+      </ul>
+    </nav>
+    <button (click)="logout()" class="logout-button">
+      <i class="fa-solid fa-right-from-bracket"></i>Logout
+    </button>
+  </div>
+    
+</div>
 <div class="create-post">
     <h2>Create New Post</h2>
   
@@ -8,7 +23,7 @@
   
       <label for="content">Content</label>
       <textarea id="content" name="content" [(ngModel)]="content"></textarea>
-  
+      <input type="file" (change)="onFileSelected($event)" required />
       <button type="submit">Create Post</button>
     </form>
   
@@ -16,5 +31,4 @@
       {{ errorMessage }}
     </div>
   </div>
-</div>
   

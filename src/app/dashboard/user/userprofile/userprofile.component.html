@@ -1,17 +1,22 @@
-<div class="container">
-    <h2>User Information</h2>
-    <!-- user-profile.component.html -->
-    <form [formGroup]="userForm" (ngSubmit)="onUpdateUser()">
-        <label for="name">Name:</label>
-        <input id="name" formControlName="name" type="text" />
 
-        <label for="email">Email:</label>
-        <input id="email" formControlName="email" type="email" />
-
-        <label for="password">Password:</label>
-        <input id="password" formControlName="password" type="password" />
-
-        <button type="submit">Update User</button>
-    </form>
-
+  <div class="navbar">
+    <div class="logo"></div>
+    <nav>
+      <ul>
+        <li><i class="fa-solid fa-user"></i><a routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a></li>
+        <li><i class="fa-solid fa-gear"></i><a routerLink="/userinfo" routerLinkActive="active-link">Settings</a></li>
+      </ul>
+    </nav>
+    <button (click)="logout()" class="logout-button">
+      <i class="fa-solid fa-right-from-bracket"></i>Logout
+    </button>
+  </div>
+  <div class="container">
+    <div class="main">
+        <h1>User Info</h1>
+        <p><span>Name:</span> {{user.name}}</p>
+        <p><span>Email:</span>  {{user.email}} </p>
+        <p><span>Password:</span> ********</p>
+        <button class="edit-button" >Edit User</button>
+    </div>
 </div>

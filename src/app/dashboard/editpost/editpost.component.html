@@ -1,13 +1,33 @@
 <div class="editpost">
+  <div class="navbar">
+    <div class="logo"></div>
+    
+    <nav>
+      <ul>
+        <li><a routerLink="/dashboard" routerLinkActive="active-link"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+        <!-- <li>
+          <a routerLink="/createpost" routerLinkActive="active-link">Create Post</a>
+        </li> -->
+        <li><a routerLink="/userinfo" routerLinkActive="active-link"><i class="fa-solid fa-gear"></i>Settings</a></li>
+     
+      
+      </ul>
+    </nav>
+    <button (click)="logout()" class="logout-button">
+      <i class="fa-solid fa-right-from-bracket"></i>Logout
+    </button>
+  </div>
+  
+<div *ngIf="post" class="editpost-container">
   <h2>Edit Post</h2>
-<div *ngIf="post">
     <form (ngSubmit)="savePost()">
+
       <label for="title">Title:</label>
       <input id="title" [(ngModel)]="post.title" name="title" required />
   
       <label for="content">Content:</label>
       <textarea id="content" [(ngModel)]="post.content" name="content" required></textarea>
-  
+      <input type="file"  required />
       <button type="submit">Save Changes</button>
     </form>
   </div>

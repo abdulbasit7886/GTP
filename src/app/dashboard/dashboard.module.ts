@@ -7,13 +7,21 @@ import { CreatepostComponent } from './createpost/createpost.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditpostComponent } from './editpost/editpost.component';
 import { UserRoutingModule } from './user/user-routing.module';
+import { ProfileComponent } from './profile/profile.component';
+import { SearchComponent } from './search/search.component';
+import { NotificationComponent } from './notification/notification.component';
+import { FriendsComponent } from './friends/friends.component';
 
 
 @NgModule({
   declarations: [
     CreatepostComponent,
     EditpostComponent,
-    ViewComponent
+    ViewComponent,
+    ProfileComponent,
+    SearchComponent,
+    NotificationComponent,
+    FriendsComponent
   ],
   imports: [
     CommonModule,

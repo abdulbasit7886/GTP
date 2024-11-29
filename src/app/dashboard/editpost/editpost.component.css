@@ -2,32 +2,142 @@
 .editpost {
     background-color: #ffffff;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    background-image: url('../../../assets/images/10784051.jpg');
+    background-size: cover;
+    /* height: 100vh; */
+    background-position: bottom;
+    box-shadow: 0 4px 8px rgba(223, 219, 219, 0.5);
     width: 100%;
-    max-width: 600px;
-    margin: 40px auto;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 100px;
     font-family: 'Arial', sans-serif;
+    background: transparent;
 }
 
-/* Title of the form */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    /* padding: 8px; */
+    background-color: #15080888;
+    /* border-radius: 8px; */
+    margin-bottom: 30px;
+    /* width: 100vw; */
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.navbar ul li {
+    margin-right: 20px;
+    list-style: none;
+    margin-top: 10px;
+
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.navbar ul li a:hover {
+    color: rgb(102, 5, 137);
+}
+
+.navbar ul li i {
+    margin-right: 5px;
+}
+
+.navbar button {
+    padding: 5px 10px;
+}
+.logout-button{
+    height: 30px;
+    width: 100px;
+    margin-top: 15px;
+    border-radius: 10px;
+    margin-right: 20px;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.logout-button:hover{
+    background-color: rgb(102, 5, 137);
+    transition: all 0.2s;
+    color: white;
+}
+.logout-button i{
+    margin-right: 5px;
+}
+.logo{
+    background-image: url('../../../assets/images/Untitled_design-removebg-preview.png');
+    background-size: cover;
+    height: 70px;
+    width: 70px;
+    color: white;
+    margin-left: 20px;
+}
+
 .create-post h2 {
     font-size: 24px;
-    color: #333;
+    color: #fff;
     margin-bottom: 20px;
     text-align: center;
 }
 
-/* Label styling */
+.editpost-container {
+    color: white;
+}
+
+.editpost-container input,
+textarea {
+    background: transparent;
+    border-radius: 50px;
+}
+
+.editpost-container h2 {
+    text-align: center;
+}
+
+.logout-button {
+    height: 30px;
+    width: 100px;
+    margin-top: 15px;
+    border-radius: 10px;
+    margin-right: 20px;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.logout-button:hover {
+    background-color: rgb(102, 5, 137);
+    transition: all 0.2s;
+    color: white;
+}
+
 label {
     font-size: 14px;
-    color: #333;
+    /* color: #fff; */
     display: block;
     margin-bottom: 5px;
 }
 
-/* Input and textarea field styling */
-#title{
+#title {
 
     width: 100%;
     padding: 10px;
@@ -37,6 +147,7 @@ label {
     font-size: 14px;
     transition: all 0.3s ease;
 }
+
 textarea {
     width: 100%;
     padding: 10px;
@@ -47,14 +158,12 @@ textarea {
     transition: all 0.3s ease;
 }
 
-/* Input focus effects */
 input[type="text"]:focus,
 textarea:focus {
     border-color: #3498db;
     outline: none;
 }
 
-/* Button styling */
 button[type="submit"] {
     width: 100%;
     padding: 12px;
@@ -71,7 +180,6 @@ button[type="submit"]:hover {
     background-color: #2980b9;
 }
 
-/* Error message styling */
 .error-message {
     margin-top: 20px;
     background-color: #e74c3c;
@@ -82,7 +190,6 @@ button[type="submit"]:hover {
     text-align: center;
 }
 
-/* Responsive Styling */
 @media (max-width: 768px) {
     .create-post {
         padding: 20px;

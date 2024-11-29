@@ -37,6 +37,9 @@ export class EditpostComponent implements OnInit {
 
   savePost(): void {
   const token = localStorage.getItem('authToken'); 
+  if (!token){
+    this.router.navigate(['/login'])
+  }
 
   this.http.put(`http://localhost:3001/editpost/${this.postId}`, this.post, {
     headers: {
@@ -52,5 +55,8 @@ export class EditpostComponent implements OnInit {
     }
   );
 }
-
+logout() {
+  localStorage.removeItem('authToken')
+  this.router.navigate(['/login'])
+}
 }

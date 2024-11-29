@@ -1,0 +1,158 @@
+.container {
+    max-width: 400px; 
+    margin: 50px auto; 
+    padding: 20px;
+    /* background: transparent; */
+    background-color: #fff;
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    /* padding: 8px; */
+   background-color: #15080888;
+    /* border-radius: 8px; */
+    margin-bottom: 30px;
+    /* width: 100vw; */
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.navbar ul li {
+    margin-right: 20px;
+    list-style: none;
+    margin-top: 10px;
+
+}
+.navbar ul li a:hover{
+    color:  rgb(102, 5, 137);
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.navbar ul li i {
+    color: white;
+    margin-right: 5px;
+}
+.navbar button{
+    padding: 5px 10px;
+}
+
+header h1 {
+    font-size: 28px;
+    color: black;
+}
+.logout-button{
+    height: 30px;
+    width: 100px;
+    margin-top: 15px;
+    border-radius: 10px;
+    margin-right: 20px;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.logout-button:hover{
+    background-color: rgb(102, 5, 137);
+    transition: all 0.2s;
+    color: white;
+}
+.logout-button i{
+    margin-right: 5px;
+}
+
+.logo{
+    background-image: url('../../../../assets/images/Untitled_design-removebg-preview.png');
+    background-size: cover;
+    height: 70px;
+    width: 70px;
+    color: white;
+    margin-left: 20px;
+}
+  h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+  }
+  
+  label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+  }
+  .container{
+    margin-top: 100px;
+  }
+  .container input{
+    width: 100%; 
+    padding: 10px; 
+    font-size: 1rem;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #fff;
+    box-sizing: border-box; 
+  }
+  .container input:focus {
+    border-color: #007bff; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+ .container button{
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff; 
+    background-color: #007bff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+  }
+  
+  .container button:hover {
+    background-color: #0056b3; 
+  }
+  
+  .container button:active {
+    background-color: #004085;
+  }
+  
+  small {
+    font-size: 0.85rem;
+    color: #6c757d;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      margin: 20px;
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  }

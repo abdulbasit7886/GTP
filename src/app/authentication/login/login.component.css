@@ -4,29 +4,39 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #f1f1f1;
+    /* background: #f1f1f1; */
+    background-image: url('../../../assets/images/10784051.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
     font-family: 'Arial', sans-serif;
+  
 }
 .login {
     background-color: #ffffff;
     padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* border-radius: 8px; */
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(223, 219, 219, 0.5);
     width: 100%;
     max-width: 400px;
+    background: transparent;
 }
 
 .login h2 {
     text-align: center;
     font-size: 24px;
-    color: #333;
+    color: #fff;
     margin-bottom: 20px;
 }
 
-/* Label and input field styling */
+.login a{
+    color: white;
+}
 label {
     font-size: 14px;
-    color: #333;
+    color: #fff;
     margin-bottom: 5px;
     display: block;
 }
@@ -34,26 +44,27 @@ label {
 .login input {
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 50px;
     font-size: 14px;
     transition: all 0.3s ease;
+    background: transparent;
+    color: white;
 }
 
-/* Input focus effects */
 .login input:focus {
-    border-color: #3498db;
+    border-color: #ac34db;
     outline: none;
 }
 
-/* Submit button styling */
 input[type="submit"] {
     width: 100%;
     padding: 12px;
     background-color: #3498db;
     border: none;
     border-radius: 4px;
+    margin: 0 auto;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
@@ -64,7 +75,6 @@ input[type="submit"]:hover {
     background-color: #2980b9;
 }
 
-/* Signup message below the form */
 p {
     text-align: center;
     font-size: 14px;
@@ -80,7 +90,7 @@ p a:hover {
     text-decoration: underline;
 }
 
-/* Error message section */
+
 #errorMessages {
     color: red;
     font-size: 12px;
@@ -88,7 +98,7 @@ p a:hover {
     text-align: center;
 }
 
-/* Responsive styling */
+
 @media (max-width: 480px) {
     .login {
         padding: 20px;

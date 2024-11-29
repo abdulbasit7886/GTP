@@ -1,0 +1,29 @@
+    <div class="nav-container">
+      <div class="navbar">
+        <div class="logo"></div>
+        <nav>
+          <ul>
+            <li><i class="fa-solid fa-user"></i><a routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a></li>
+            <li><i class="fa-solid fa-upload"></i><a routerLink="/createpost" routerLinkActive="active-link">Upload</a></li>
+            <li><i class="fa-solid fa-gear"></i><a routerLink="/userinfo" routerLinkActive="active-link">Settings</a></li>
+          </ul>
+        </nav>
+        <button (click)="logout()" class="logout-button">
+          <i class="fa-solid fa-right-from-bracket"></i>Logout
+        </button>
+      </div>
+        
+</div>
+<div class="post-list">
+    <div *ngFor="let post of posts" class="post-item">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.content }}</p>
+      <img *ngIf="post.photo" [src]="'http://localhost:3001' + post.photo" alt="Post Photo" />
+      <div class="post-actions">
+        <button class="like-button">Like</button>
+        <button class="comment button">Comment</button><button (click)="editpage(post._id)"
+          class="edit-post-button">Edit Post</button><button (click)="deletePost(post._id)" class="delete-post-button">Delete Post</button>
+      </div>
+
+    </div>
+  </div>

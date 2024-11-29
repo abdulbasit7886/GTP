@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-
+import { HttpClient } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SocketService } from 'src/app/dashboard/service/socket.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -11,7 +13,20 @@ import { NgForm } from '@angular/forms';
   imports:[FormsModule]
 })
 export class SignupComponent {
-  constructor(private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private snackBar: MatSnackBar,
+  ) {}
+
+  showNotification(message: string): void {
+    console.log("Notification Message:", message);  // Add this for debugging
+    this.snackBar.open(message, 'Close', {
+      duration: 3000, // 3 seconds duration
+      horizontalPosition: 'center',
+      verticalPosition: 'top'
+    });
+  }
 
   async userSignUp(signUpForm: NgForm) {
     if (signUpForm.valid) {
@@ -25,17 +40,17 @@ export class SignupComponent {
         });
 
         if (response.ok) {
-          alert("User registered successfully");
+          this.showNotification('User Register Successfuly!');
           this.router.navigate(['/login']);
         } else {
-          alert("Registration failed. Please try again.");
+          this.showNotification('Error In Registring the User');
         }
       } catch (error) {
-        alert("An error occurred while trying to register. Please try again.");
+        this.showNotification('An error occurred while trying to register. Please try again.')
         console.error("Error:", error);
       }
     } else {
-      alert("Please fill in all required fields.");
+      this.showNotification("Please fill in all required fields.");
     }
   }
 }
