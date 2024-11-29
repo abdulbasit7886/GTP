@@ -1,0 +1,39 @@
+<main>
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <i class="fas fa-search"></i>
+        <input
+          type="text"
+          placeholder="Search by name..."
+          [(ngModel)]="searchQuery"
+          (keyup)="searchUsers()"
+        />
+      </div>
+      <div *ngFor="let user of searchResults" class="user-card">
+        <p>{{ user.name }}</p>
+        <ng-container>
+          <button *ngIf="user.alreadyFriend" class="btn btn-success" disabled>
+            Friend
+          </button>
+          <button
+            *ngIf="!user.alreadyFriend && user.requestSent"
+            class="btn btn-warning"
+            (click)="cancelFriendRequest(user._id)"
+          >
+            Cancel Request
+          </button>
+          <button
+            *ngIf="!user.alreadyFriend && !user.requestSent"
+            class="btn btn-primary"
+            (click)="sendFriendRequest(user._id)"
+          >
+            Send Friend Request
+          </button>
+        </ng-container>
+      </div>
+      <div *ngIf="searchQuery && searchResults.length === 0">
+        <p>No users found.</p>
+      </div>
+    </div>
+  </main>
+  

@@ -1,0 +1,20 @@
+<main>
+    <div class="friends-container" *ngIf="friends.length > 0; else noFriends">
+        <h2>All Friends</h2>
+        <ul>
+          <li *ngFor="let friend of friends">
+            <div class="friend-item">
+              <span class="friend-name">{{ friend.name }}</span>
+              <button class="unfriend-btn" (click)="unfriend(friend._id)">Unfriend</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      <ng-template #noFriends>
+        <div class="no-friends">
+          <p>You have no friends in your list yet.</p>
+        </div>
+      </ng-template>
+</main>
+  

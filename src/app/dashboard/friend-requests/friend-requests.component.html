@@ -1,0 +1,17 @@
+<main>
+    <div class="friend-requests-container">
+        <h2>Pending Friend Requests</h2>
+        <div *ngIf="friendRequests.length > 0">
+          <ul>
+            <li *ngFor="let request of friendRequests">
+              <span class="sender-name">{{ request.sender.name }}</span>
+              <button (click)="acceptRequest(request.sender._id)">Accept</button>
+              <button class="reject" (click)="rejectRequest(request.sender._id)">Reject</button>
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="friendRequests.length === 0">
+          <p>No pending requests.</p>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,12 @@
+<div class="mutual-friends">
+    <h3>Mutual Friends</h3>
+    <ul *ngIf="mutualFriends.length > 0; else noFriends">
+      <li *ngFor="let friend of mutualFriends">
+        {{ friend.name }} - {{ friend.email }}
+      </li>
+    </ul>
+    <ng-template #noFriends>
+      <p>No mutual friends found.</p>
+    </ng-template>
+  </div>
+  

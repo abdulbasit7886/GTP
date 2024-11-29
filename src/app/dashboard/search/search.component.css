@@ -1,0 +1,121 @@
+/* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f8fa;
+    margin: 0;
+    padding: 0;
+  }
+
+  main{
+    min-height: 74vh;
+  }
+  
+  /* Search container */
+  .search-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* General container for search input */
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .search-input-wrapper input {
+    width: 100%;
+    padding: 10px 15px 10px 40px; /* Add padding to make space for the icon */
+    border: 1px solid #e1e8ed;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .search-input-wrapper input:focus {
+    border-color: #1da1f2;
+    box-shadow: 0 0 8px rgba(29, 161, 242, 0.5);
+  }
+  
+  /* Font Awesome icon positioning */
+  .search-input-wrapper .fas {
+    position: absolute;
+    left: 15px;
+    color: #657786;
+    font-size: 18px;
+  }
+  
+  
+  /* User card */
+  .user-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .user-card:hover {
+    background-color: #f0f8ff;
+    border-color: #1da1f2;
+  }
+  
+  .user-card p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #14171a;
+  }
+  
+  /* Buttons */
+  .user-card button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .user-card button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  .user-card .btn-success {
+    background-color: #17bf63;
+    color: #ffffff;
+  }
+  
+  .user-card .btn-warning {
+    background-color: #ffad1f;
+    color: #ffffff;
+  }
+  
+  .user-card .btn-primary {
+    background-color: #1da1f2;
+    color: #ffffff;
+  }
+  
+  .user-card button:hover:not(:disabled) {
+    opacity: 0.9;
+  }
+  
+  /* No results message */
+  .search-container p {
+    text-align: center;
+    font-size: 14px;
+    color: #657786;
+  }
+  

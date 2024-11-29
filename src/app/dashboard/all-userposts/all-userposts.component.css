@@ -40,7 +40,6 @@ h2 {
   display: grid;  /* Use CSS Grid */
   grid-template-columns: repeat(2, 1fr);  /* 2 equal columns */
   gap: 20px;  /* Space between columns */
-  border-bottom: 1px solid #e1e8ed;
   padding-bottom: 20px;
   margin-bottom: 20px;
 }

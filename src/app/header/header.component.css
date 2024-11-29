@@ -1,68 +1,110 @@
-/* Twitter-inspired theme */
+/* Enhanced Header Styles */
 .header {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1DA1F2; /* Twitter Blue */
+  background: linear-gradient(90deg, #1DA1F2, #0d95e8);
   color: white;
   padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  animation: slideDown 0.5s ease-in-out;
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 /* Logo Section */
 .logo {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   text-transform: capitalize;
   color: white;
   letter-spacing: 1px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1) rotate(-5deg);
 }
 
 /* Navigation Menu */
 .menu {
+  background-color: rgb(255, 255, 255);
   list-style-type: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
   margin: 0;
-  padding: 0;
+  padding: 10px;
+  border-radius: 15px;
 }
 
 .menu li {
   font-size: 16px;
   font-weight: 500;
+  position: relative;
 }
 
 .menu li a {
-  color: white;
+  color:#1DA1F2 ;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .menu li a:hover {
-  color: #A4D9F8; /* Lighter blue for hover */
+  color: black; /* Lighter blue on hover */
+  transform: translateY(-5px);
+}
+
+.menu li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #1DA1F2; /* Lighter blue underline */
+  transition: width 0.3s ease-in-out;
+}
+
+.menu li a:hover::after {
+  width: 100%;
 }
 
 /* Logout Button */
 .logout button {
-  background-color: white;
+  background: linear-gradient(90deg, #ffffff, #e3f2fd);
   color: #1DA1F2;
   border: none;
-  border-radius: 50px; /* Rounded style like Twitter buttons */
-  padding: 8px 16px;
+  border-radius: 15px;
+  padding: 12px 20px;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logout button:hover {
-  background-color: #A4D9F8; /* Lighter blue */
+  background: linear-gradient(90deg, #A4D9F8, #1DA1F2);
   color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Mobile Responsiveness */
@@ -70,11 +112,12 @@
   .header {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
 
   .menu {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
   }
 
   .logout {

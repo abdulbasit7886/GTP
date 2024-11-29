@@ -93,9 +93,9 @@ body {
   border-radius: 10px;
   border: 1px solid #0095ff;
   padding: 10px 20px;
-  height: 350px; /* Fixed height for posts */
-  width: 100%; /* Ensure posts occupy full width */
-  max-width: 600px; /* Limit width */
+  max-height: 350px; 
+  width: 100%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

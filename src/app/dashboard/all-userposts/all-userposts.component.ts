@@ -17,7 +17,7 @@ export class AllUserPostsComponent implements OnInit {
   }
 
   fetchAllPosts(): void {
-    const token = localStorage.getItem('token'); // Assumes token is stored in localStorage
+    const token = localStorage.getItem('token');
     if (!token) {
       this.errorMessage = 'Authorization token is missing!';
       return;
